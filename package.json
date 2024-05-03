@@ -1,0 +1,26 @@
+{
+  "name": "@zufans/alpaca",
+  "version": "1.0.0",
+  "description": "Alpaca API",
+  "main": "dis/index.js",
+  "scripts": {
+    "dev:start": "nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
+    "build:types": "tsc",
+    "git": "sh Shell/Github/git.sh"
+  },
+  "keywords": [],
+  "author": "Kidus T",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
