@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Alpaca API",
   "main": "dis/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zufans/alpaca.git"
+  },
+  "homepage": "https://github.com/zufans/alpaca#readme",
   "scripts": {
     "dev:start": "nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
     "build:types": "tsc",
