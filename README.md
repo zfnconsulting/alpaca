@@ -1,12 +1,12 @@
 # Alpaca Trading API Documentation
 
+## Node.js library for Alpaca Trade API
+
 ## Overview
 
 This is my version of Alpaca's Trading API Documentation. I found the current Alpaca SDK very lacking of many features. This documentation is still a working progress.
 
 The Alpaca Trading API provides a comprehensive set of endpoints for managing trading activities, account information, market data, and more. It is designed for developers looking to create automated trading systems or integrate Alpaca's functionalities into their applications.
-
-Node.js library for Alpaca Trade API.
 
 ## API Documentation
 
@@ -133,5 +133,6 @@ alpaca.getAssets().then((getAssets) => {
     "maintenance_margin_requirement": "string",
     "attributes": ["ptp_no_exception", "ipo"]
   }
+  //...more items
 ]
 ```
