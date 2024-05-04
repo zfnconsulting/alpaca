@@ -1,7 +1,7 @@
 {
-  "name": "@zufans/alpaca",
-  "version": "1.0.1",
-  "description": "Alpaca API",
+  "name": "@zufan/alpaca",
+  "version": "1.0.2",
+  "description": "@zufan/alpaca Alpaca Trading API provides a comprehensive set of endpoints for managing Stocks and Crypto trading activities, account information, market real-time, and more. It is designed for developers looking to create automated trading systems or integrate Alpaca's functionalities into their applications.",
   "main": "dis/index.js",
   "repository": {
     "type": "git",
@@ -13,7 +13,15 @@
     "build:types": "tsc",
     "git": "sh Shell/Github/git.sh"
   },
-  "keywords": [],
+  "keywords": [
+    "Trading",
+    "API",
+    "Market",
+    "Data",
+    "Crypto",
+    "Stock",
+    "Options"
+  ],
   "author": "Kidus T",
   "license": "ISC",
   "dependencies": {
