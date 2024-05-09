@@ -108,10 +108,30 @@ alpaca.getAccount().then((account) => {
 
 `Endpoint GET: /v2/assets`
 
+### getAssets parameter
+
+- **status** (string) -optional: active || inactive,
+- **asset_class** (string) -optional: us_equity || crypto
+- **exchange** (string) -optional: OTC || NASDAQ || NYSE || ARCA || BATS || AMEX || CRYPTO
+- **attributes** (array) -optional: [ptp_no_exception || ptp_with_exception || ipo || options_enabled]
+
 ```js
 alpaca.getAssets().then((getAssets) => {
-  console.log("Current Assets:", getAssets);
+  console.log("Assets:", getAssets);
 });
+```
+
+OR
+
+```js
+alpaca
+  .getAssets({
+    status: "active",
+    attributes: ["ptp_no_exception", "options_enabled"],
+  })
+  .then((getAssets) => {
+    console.log("Assets:", getAssets);
+  });
 ```
 
 ### Example getAccount Response
