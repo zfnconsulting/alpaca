@@ -49,7 +49,7 @@ class Alpaca {
     }
     return configuration;
   }
-  getAccount(): Promise<GetAccount> {
+  getAccount() {
     try {
       return axios
         .request(
@@ -82,7 +82,7 @@ class Alpaca {
     }
   }
 
-  getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol): Promise<object> {
+  getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol) {
     try {
       return axios
         .request(
