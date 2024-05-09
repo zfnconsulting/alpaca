@@ -1,4 +1,4 @@
-# Alpaca Trading API Documentation
+# Alpaca Class Documentation
 
 ## Node.js library for Alpaca Trade API
 
@@ -14,15 +14,30 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
 
 ## Table of Contents
 
-- [Usage](#Usage)
-- [getAccount](#getAccount)
-  - [Example getAccount Response](#Example-getAccount-Response)
-- [getAssets](#getAssets)
-  - [Example getAccount Response](#Example-getAssets-Response)
+- [Usage](##Installation-And-Usage)
+- [Constructor](#constructor)
+- [Methods](#methods)
+  - [getAccount()](#getaccount-promisegetaccount)
+  - [getAssets(params?: GetAssetsParams)](#getassetsparams-getassetsparams-promiseobject)
+  - [getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol)](#getanassetbyidorSymbolparams-getanassetbyidorSymbol-promiseobject)
+  - [getOptionContracts(param?: GetOptionContracts)](#getoptioncontractsparam-getoptioncontracts-promiseobject)
+  - [getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol)](#getoptioncontractbyidorSymbolparam-getoptioncontractbyidorSymbol-promiseobject)
+  - [getSpecificAnnouncement(id: string)](#getspecificannouncementid-string-promiseobject)
+  - [getAnnouncements(param: GetAnnouncements)](#getannouncementsparam-getannouncements-promiseobject)
+  - [createAnOrder(param: CreateAnOrder)](#createanorderparam-createanorder-promiseobject)
+  - [getAllOrders(param: GetAllOrders)](#getallordersparam-getallorders-promiseobject)
+  - [deleteAllOrders()](#deleteallorders-promiseobject)
+  - [getOrderById(param: GetOrderById)](#getorderbyidparam-getorderbyid-promiseobject)
+  - [replaceOrderbyID(param: ReplaceOrderbyID)](#replaceorderbyidparam-replaceorderbyid-promiseobject)
+  - [deleteOrderbyID(param: DeleteOrderbyID)](#deleteorderbyidparam-deleteorderbyid-promiseobject)
 
-## Usage
+## Installation And Usage
 
-Import the module first.
+```bash
+npm install @zufans/alpaca
+```
+
+Import the package first.
 
 ```js
 const Alpaca = require("@zufans/alpaca");
@@ -34,7 +49,9 @@ Or
 import Alpaca from "@zufans/alpaca";
 ```
 
-Instantiate the API with config options, obtained from the dashboard at app.alpaca.markets.
+## Constructor
+
+### `alpaca.constructor(auth: Authentication)`
 
 ```js
 const alpaca = new Alpaca({
@@ -44,115 +61,102 @@ const alpaca = new Alpaca({
 });
 ```
 
-- **keyId ** (string) -required: The unique identifier for the account.
-- **secretKey** (string) -required: The current status of the account.
-- **paper** (string) -required: The base currency of the account.
+Initializes the Alpaca class with the provided authentication credentials.
 
-## getAccount
+- `auth`: An object containing authentication credentials.
+  - `keyId`: A string representing the API key ID.
+  - `secretKey`: A string representing the API secret key.
+  - `paper`: A boolean indicating whether to use the paper trading environment (`true`) or the live environment (`false`).
 
-`Endpoint GET: /v2/accounts`
+## Methods
 
-```js
-alpaca.getAccount().then((account) => {
-  console.log("Current Account:", account);
-});
-```
+### `alpaca.getAccount()`
 
-### Example getAccount Response
+Retrieves information about the account associated with the provided authentication credentials.
 
-```json
-{
-  "id": "1d9eed04-be39-4e01-9b84-a48ac5bbafcf",
-  "admin_configurations": {},
-  "user_configurations": null,
-  "account_number": "PALPACA_123",
-  "status": "ACTIVE",
-  "crypto_status": "ACTIVE",
-  "currency": "USD",
-  "buying_power": "245432.61",
-  "regt_buying_power": "245432.61",
-  "daytrading_buying_power": "0",
-  "options_buying_power": "122716.305",
-  "effective_buying_power": "245432.61",
-  "non_marginable_buying_power": "122086.5",
-  "bod_dtbp": 0,
-  "cash": "122086.5",
-  "accrued_fees": "0",
-  "pending_transfer_in": "0",
-  "portfolio_value": "123346.11",
-  "pattern_day_trader": true,
-  "trading_blocked": false,
-  "transfers_blocked": false,
-  "account_blocked": false,
-  "created_at": "2023-01-01T18:20:20.272275Z",
-  "trade_suspended_by_user": false,
-  "multiplier": "2",
-  "shorting_enabled": true,
-  "equity": "123346.11",
-  "last_equity": "122011.09751111286868",
-  "long_market_value": "1259.61",
-  "short_market_value": "0",
-  "position_market_value": "1259.61",
-  "initial_margin": "629.8",
-  "maintenance_margin": "377.88",
-  "last_maintenance_margin": "480.73",
-  "sma": "123369.74",
-  "daytrade_count": 0,
-  "balance_asof": "2023-09-27",
-  "crypto_tier": 1,
-  "options_trading_level": 2
-}
-```
+### `alpaca.getAssets(params?: GetAssetsParams)`
 
-## getAssets
+Retrieves a list of assets available for trading on the Alpaca platform.
 
-`Endpoint GET: /v2/assets`
+- `params` (optional): An object containing optional parameters for filtering assets.
+  - `status`: A string representing the status of assets to retrieve (e.g., 'active', 'inactive').
+  - `asset_class`: A string representing the asset class (e.g., 'us_equity', 'us_option').
+  - `exchange`: A string representing the exchange where the asset is traded.
+  - `attributes`: A string representing additional attributes to include in the response.
 
-### getAssets parameter
+### `alpaca.getAnAssetByIDorSymbol(param: GetAnAssetByIDorSymbol)`
 
-- **status** (string) -optional: active || inactive,
-- **asset_class** (string) -optional: us_equity || crypto
-- **exchange** (string) -optional: OTC || NASDAQ || NYSE || ARCA || BATS || AMEX || CRYPTO
-- **attributes** (array) -optional: [ptp_no_exception || ptp_with_exception || ipo || options_enabled]
+Retrieves information about a specific asset identified by its ID or symbol.
 
-```js
-alpaca.getAssets().then((getAssets) => {
-  console.log("Assets:", getAssets);
-});
-```
+- `param`: An object containing either the ID or symbol of the asset to retrieve.
+  - `symbol_or_asset_id`: A string representing either the asset ID or symbol.
 
-OR
+### `alpaca.getOptionContracts(param?: GetOptionContracts)`
 
-```js
-alpaca
-  .getAssets({
-    status: "active",
-    attributes: ["ptp_no_exception", "options_enabled"],
-  })
-  .then((getAssets) => {
-    console.log("Assets:", getAssets);
-  });
-```
+Retrieves a list of option contracts available for trading.
 
-### Example getAccount Response
+- `param` (optional): An object containing optional parameters for filtering option contracts.
 
-```json
-[
-  {
-    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "class": "us_equity",
-    "exchange": "NYSE",
-    "symbol": "AAPL",
-    "name": "string",
-    "status": "active",
-    "tradable": true,
-    "marginable": true,
-    "shortable": true,
-    "easy_to_borrow": true,
-    "fractionable": true,
-    "maintenance_margin_requirement": "string",
-    "attributes": ["ptp_no_exception", "ipo"]
-  }
-  //...more items
-]
-```
+### `alpaca.getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol)`
+
+Retrieves information about a specific option contract identified by its ID or symbol.
+
+- `param`: An object containing either the ID or symbol of the option contract to retrieve.
+  - `symbol_or_asset_id`: A string representing either the option contract ID or symbol.
+
+### `alpaca.getSpecificAnnouncement(id: string)`
+
+Retrieves information about a specific corporate announcement.
+
+- `id`: A string representing the ID of the announcement to retrieve.
+
+### `alpaca.getAnnouncements(param: GetAnnouncements)`
+
+Retrieves a list of corporate announcements.
+
+- `param`: An object containing parameters for filtering announcements.
+  - `ca_types`: A string representing the types of corporate actions to retrieve.
+  - `since`: A string representing the start date for filtering announcements.
+  - `until`: A string representing the end date for filtering announcements.
+  - `symbol` (optional): A string representing the symbol of the asset associated with the announcements.
+  - `cusip` (optional): A string representing the CUSIP of the asset associated with the announcements.
+  - `date_type` (optional): A string representing the date type for filtering announcements.
+
+### `alpaca.createAnOrder(param: CreateAnOrder)`
+
+Creates a new order for trading.
+
+- `param`: An object containing parameters for creating the order.
+  - See method signature for details.
+
+### `alpaca.getAllOrders(param: GetAllOrders)`
+
+Retrieves a list of all orders associated with the account.
+
+- `param`: An object containing optional parameters for filtering orders.
+  - See method signature for details.
+
+### `alpaca.deleteAllOrders()`
+
+Deletes all open orders associated with the account.
+
+### `alpaca.getOrderById(param: GetOrderById)`
+
+Retrieves information about a specific order identified by its ID.
+
+- `param`: An object containing the ID of the order to retrieve.
+  - `order_id`: A string representing the ID of the order.
+
+### `alpaca.replaceOrderbyID(param: ReplaceOrderbyID)`
+
+Replaces an existing order with new parameters.
+
+- `param`: An object containing parameters for replacing the order.
+  - See method signature for details.
+
+### `alpaca.deleteOrderbyID(param: DeleteOrderbyID)`
+
+Deletes a specific order identified by its ID.
+
+- `param`: An object containing the ID of the order to delete.
+  - `order_id`: A string representing the ID of the order.

@@ -188,7 +188,7 @@ class Alpaca {
       throw error;
     }
   }
-  getAllOrders(param: GetAllOrders): object {
+  getAllOrders(param: GetAllOrders) {
     try {
       const paramKeys = ["after", "until"];
       const timeformated = timeFormatByKey(param, paramKeys);

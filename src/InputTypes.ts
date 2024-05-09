@@ -1,35 +1,35 @@
 // Alpaca date format: YYYY-MM-DD
-type Authentication_input = {
+type Authentication = {
   keyId: string;
   secretKey: string;
   paper: boolean;
 };
 
 type symbol_or_asset_id = string;
-type GetAnAssetByIDorSymbol_input = {
+type GetAnAssetByIDorSymbol = {
   symbol_or_asset_id: symbol_or_asset_id;
 };
-type AxiosConfig_input = {
+type AxiosConfig = {
   url: string;
   version: string;
   method: string;
   data?: object;
   params?: object;
   // params?:
-  //   | GetAssetsParams_input
-  //   | GetAnAssetByIDorSymbol_input
-  //   | GetAnnouncements_Input;
+  //   | GetAssetsParams
+  //   | GetAnAssetByIDorSymbol
+  //   | GetAnnouncements;
 };
 
 type status = string;
-type GetAssetsParams_input = {
+type GetAssetsParams = {
   status?: status;
   asset_class?: string;
   exchange?: string;
   attributes?: string;
 };
 
-type GetOptionContracts_input = {
+type GetOptionContracts = {
   underlying_symbols?: string;
   show_deliverables?: boolean;
   status?: status;
@@ -44,11 +44,11 @@ type GetOptionContracts_input = {
   page_token?: string;
   limit?: number;
 };
-type GetOptionContractByIDorSymbol_Input = {
+type GetOptionContractByIDorSymbol = {
   symbol_or_asset_id: symbol_or_asset_id;
 };
 
-type GetAnnouncements_Input = {
+type GetAnnouncements = {
   ca_types: string;
   since: string;
   until: string;
@@ -57,7 +57,7 @@ type GetAnnouncements_Input = {
   date_type?: string;
 };
 
-type CreateAnOrder_input = {
+type CreateAnOrder = {
   symbol: string;
   qty?: string;
   notional?: string;
@@ -76,7 +76,7 @@ type CreateAnOrder_input = {
   position_intent?: string;
 };
 
-type GetAllOrders_Input = {
+type GetAllOrders = {
   status?: string; // open, closed, all
   limit?: number; // Defaults to 50, min 1, max 500
   after?: Time; // yyyy-mm-ddThh:mm:ssZ
@@ -116,15 +116,15 @@ interface DeleteOrderbyID {
 }
 
 export {
-  Authentication_input as Authentication,
-  GetAssetsParams_input as GetAssetsParams,
-  AxiosConfig_input as AxiosConfig,
-  GetAnAssetByIDorSymbol_input as GetAnAssetByIDorSymbol,
-  GetOptionContracts_input as GetOptionContracts,
-  GetOptionContractByIDorSymbol_Input as GetOptionContractByIDorSymbol,
-  GetAnnouncements_Input as GetAnnouncements,
-  CreateAnOrder_input as CreateAnOrder,
-  GetAllOrders_Input as GetAllOrders,
+  Authentication,
+  GetAssetsParams,
+  AxiosConfig,
+  GetAnAssetByIDorSymbol,
+  GetOptionContracts,
+  GetOptionContractByIDorSymbol,
+  GetAnnouncements,
+  CreateAnOrder,
+  GetAllOrders,
   GetOrderById,
   ReplaceOrderbyID,
   DeleteOrderbyID,
