@@ -14,7 +14,7 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
 
 ## Table of Contents
 
-- [Usage](##Installation-And-Usage)
+- [Usage](#Installation-And-Usage)
 - [Constructor](#constructor)
 - [Methods](#methods)
   - [getAccount()](#getaccount-promisegetaccount)
@@ -30,6 +30,11 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [getOrderById(param: GetOrderById)](#getorderbyidparam-getorderbyid-promiseobject)
   - [replaceOrderbyID(param: ReplaceOrderbyID)](#replaceorderbyidparam-replaceorderbyid-promiseobject)
   - [deleteOrderbyID(param: DeleteOrderbyID)](#deleteorderbyidparam-deleteorderbyid-promiseobject)
+  - [getAllOpenPositions()](#getallopenpositions-promiseobject)
+  - [closeAllPositions(param: CloseAllPositions)](#closeallpositionsparam-closeallpositions-promiseobject)
+  - [getOpenPosition(param: GetOpenPosition)](#getopenpositionparam-getopenposition-promiseobject)
+  - [closePosition(param: ClosePosition)](#closepositionparam-closeposition-promiseobject)
+  - [exerciseOptionPosition(param: ExerciseOptionPosition)](#exerciseoptionpositionparam-exerciseoptionposition-promiseobject)
 
 ## Installation And Usage
 
@@ -160,3 +165,37 @@ Deletes a specific order identified by its ID.
 
 - `param`: An object containing the ID of the order to delete.
   - `order_id`: A string representing the ID of the order.
+
+### `getAllOpenPositions(): Promise<object>`
+
+Retrieves information about all open positions associated with the account.
+
+### `closeAllPositions(param: CloseAllPositions)`
+
+Closes all open positions associated with the account.
+
+- `param`: An object containing optional parameters for closing all positions.
+  - `cancel_orders`: A boolean indicating whether to cancel any open orders associated with the positions before closing them. If set to `true`, open orders will be canceled; if set to `false` or omitted, open orders will not be canceled.
+
+### `getOpenPosition(param: GetOpenPosition)`
+
+Retrieves information about a specific open position identified by its symbol or asset ID.
+
+- `param`: An object containing parameters for retrieving a specific open position.
+  - `symbol_or_asset_id`: A string representing either the symbol or asset ID of the position to retrieve.
+
+### `closePosition(param: ClosePosition)`
+
+Closes a specific open position identified by its symbol or asset ID.
+
+- `param`: An object containing parameters for closing a specific open position.
+  - `symbol_or_asset_id`: A string representing either the symbol or asset ID of the position to close.
+  - `qty` (optional): A string representing the quantity of the position to close. If omitted, the entire position will be closed.
+  - `percentage` (optional): A string representing the percentage of the position to close. If specified, the specified percentage of the position will be closed, and `qty` will be ignored.
+
+### `exerciseOptionPosition(param: ExerciseOptionPosition)`
+
+Exercises an option position identified by its symbol or contract ID.
+
+- `param`: An object containing parameters for exercising an option position.
+  - `symbol_or_contract_id`: A string representing either the symbol or contract ID of the option position to exercise.

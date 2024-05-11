@@ -1,6 +1,6 @@
 {
   "name": "@zufans/alpaca",
-  "version": "1.0.7",
+  "version": "1.2.0",
   "description": "@zufan/alpaca Alpaca Trading API provides a comprehensive set of endpoints for managing Stocks and Crypto trading activities, account information, market real-time, and more. It is designed for developers looking to create automated trading systems or integrate Alpaca's functionalities into their applications.",
   "main": "dist/index.js",
   "repository": {
@@ -9,9 +9,11 @@
   },
   "homepage": "https://github.com/zufans/alpaca#readme",
   "scripts": {
+    "dev:watch": "tsc -watch",
     "dev:start": "nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
     "build:types": "tsc",
-    "git": "sh Shell/Github/git.sh"
+    "git": "sh Shell/Github/git.sh",
+    "npm:publish": "npm run build:types && npm publish --access public"
   },
   "keywords": [
     "Trading",
@@ -20,12 +22,14 @@
     "Data",
     "Crypto",
     "Stock",
-    "Options"
+    "Options",
+    "Alpaca"
   ],
   "author": "Kidus T",
   "license": "ISC",
-  "dependencies": {
-    "axios": "^1.4.0"
+  "peerDependencies": {
+    "axios": "^1.4.0",
+    "date-fns": "^3.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",

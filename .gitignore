@@ -3,3 +3,5 @@ node_modules
 Shell
 nodemon.json
 Notes
+test.ts
+test.js

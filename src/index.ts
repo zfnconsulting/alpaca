@@ -1,7 +1,6 @@
 import axios from "axios";
 import {
   Authentication,
-  AxiosConfig,
   GetAssetsParams,
   GetAnAssetByIDorSymbol,
   GetOptionContracts,
@@ -12,258 +11,76 @@ import {
   GetOrderById,
   ReplaceOrderbyID,
   DeleteOrderbyID,
-} from "./InputTypes"; // input types
-import { GetAccount } from "./ReturnTypes"; // return types
-import timeFormatByKey from "./libs/dataTime/time";
+  CloseAllPositions,
+  GetOpenPosition,
+  ClosePosition,
+  ExerciseOptionPosition,
+} from "./libs/TypescriptTypes/InputTypes";
+import Account from "./libs/Alpaca/Account/Account";
+import Assets from "./libs/Alpaca/Assets/Assets";
+import CorporateActions from "./libs/Alpaca/CorporateActions/CorporateActions";
+import Orders from "./libs/Alpaca/Order/Orders";
+import Positions from "./libs/Alpaca/Positions/Positions";
 
-type ConfigurationTyps = {
-  method: string;
-  baseURL: string;
-  url: string;
-  data?: object;
-  params?: object;
-  headers: object;
-};
 class Alpaca {
-  constructor(protected readonly auth: Authentication) {
+  constructor(private readonly auth: Authentication) {
     this.auth = auth;
   }
-  #axiosConfig(config: AxiosConfig) {
-    const configuration: ConfigurationTyps = {
-      method: config.method,
-      baseURL: "https://paper-api.alpaca.markets/" + config.version,
-      url: config.url,
-      headers: {
-        accept: "application/json",
-        "APCA-API-KEY-ID": this.auth["keyId"],
-        "APCA-API-SECRET-KEY": this.auth["secretKey"],
-      },
-    };
-    if (config.method.toLocaleLowerCase() === "get") {
-      configuration["params"] = config.params;
-      return configuration;
-    }
-
-    if (config.data) {
-      configuration["data"] = config.data;
-    }
-    return configuration;
+  getAccount(): Promise<object> {
+    return new Account(this.auth).getAccount();
   }
-  getAccount() {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({ url: "/account", version: "v2", method: "get" })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  getAssets(params?: GetAssetsParams): Promise<object> {
+    return new Assets(this.auth).getAssets(params);
   }
-
-  getAssets(params?: GetAssetsParams) {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({
-            url: "/assets",
-            version: "v2",
-            method: "get",
-            params: params,
-          })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol): Promise<object> {
+    return new Assets(this.auth).getAnAssetByIDorSymbol(params);
   }
-
-  getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol) {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({
-            url: "/assets",
-            version: "v2",
-            method: "get",
-            params: params,
-          })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  getOptionContracts(param?: GetOptionContracts): Promise<object> {
+    return new Assets(this.auth).getOptionContracts(param);
   }
-
-  getOptionContracts(param?: GetOptionContracts) {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({
-            url: "/options/contracts",
-            version: "v2",
-            method: "get",
-            params: param,
-          })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  getOptionContractByIDorSymbol(
+    param: GetOptionContractByIDorSymbol
+  ): Promise<object> {
+    return new Assets(this.auth).getOptionContractByIDorSymbol(param);
   }
-  getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol) {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({
-            url: "/options/contracts/" + param.symbol_or_asset_id,
-            version: "v2",
-            method: "get",
-          })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  getSpecificAnnouncement(id: string): Promise<object> {
+    return new CorporateActions(this.auth).getSpecificAnnouncement(id);
   }
-
-  getSpecificAnnouncement(id: string) {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({
-            url: "corporate_actions/announcements/" + id,
-            version: "v2",
-            method: "get",
-          })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  getAnnouncements(param: GetAnnouncements): Promise<object> {
+    return new CorporateActions(this.auth).getAnnouncements(param);
   }
-
-  getAnnouncements(param: GetAnnouncements) {
-    try {
-      return axios
-        .request(
-          this.#axiosConfig({
-            url: "corporate_actions/announcements",
-            version: "v2",
-            method: "get",
-            params: param,
-          })
-        )
-        .then((res) => {
-          if (res.status === 200) return res.data;
-        });
-    } catch (error) {
-      throw error;
-    }
+  createAnOrder(param: CreateAnOrder): Promise<object> {
+    return new Orders(this.auth).createAnOrder(param);
   }
-  createAnOrder(param: CreateAnOrder) {
-    try {
-      const configs = this.#axiosConfig({
-        url: "/orders",
-        version: "v2",
-        method: "POST",
-        data: param,
-      });
-      return axios.request({ ...configs }).then((res) => {
-        if (res.status === 200) return res.data;
-      });
-    } catch (error) {
-      throw error;
-    }
+  getAllOrders(param: GetAllOrders): Promise<object> {
+    return new Orders(this.auth).getAllOrders(param);
   }
-  getAllOrders(param: GetAllOrders) {
-    try {
-      const paramKeys = ["after", "until"];
-      const timeformated = timeFormatByKey(param, paramKeys);
-      const configs = this.#axiosConfig({
-        url: "/orders",
-        version: "v2",
-        method: "GET",
-        params: timeformated,
-      });
-
-      return axios.request({ ...configs }).then((res) => {
-        if (res.status === 200) return res.data;
-      });
-    } catch (error) {
-      throw error;
-    }
+  deleteAllOrders(): Promise<object> {
+    return new Orders(this.auth).deleteAllOrders();
   }
-  deleteAllOrders() {
-    try {
-      const configs = this.#axiosConfig({
-        url: "/orders",
-        version: "v2",
-        method: "DELETE",
-      });
-      return axios.request({ ...configs }).then((res) => {
-        if (res.status === 207) return res.data;
-      });
-    } catch (error) {
-      throw error;
-    }
+  getOrderById(param: GetOrderById): Promise<object> {
+    return new Orders(this.auth).getOrderById(param);
   }
-  getOrderById(param: GetOrderById) {
-    try {
-      const configs = this.#axiosConfig({
-        url: "/orders",
-        version: "v2",
-        method: "GET",
-        params: param,
-      });
-      return axios.request(configs).then((res) => {
-        if (res.status === 200) return res.data;
-      });
-    } catch (error) {
-      throw error;
-    }
+  replaceOrderbyID(param: ReplaceOrderbyID): Promise<object> {
+    return new Orders(this.auth).replaceOrderbyID(param);
   }
-
-  replaceOrderbyID(param: ReplaceOrderbyID) {
-    try {
-      const configs = this.#axiosConfig({
-        url: "/orders/" + param.order_id,
-        version: "v2",
-        method: "PATCH",
-        data: param,
-      });
-      return axios.request(configs).then((res) => {
-        if (res.status === 200) return res.data;
-      });
-    } catch (error) {
-      throw error;
-    }
+  deleteOrderbyID(param: DeleteOrderbyID): Promise<object> {
+    return new Orders(this.auth).deleteOrderbyID(param);
   }
-  deleteOrderbyID(param: DeleteOrderbyID) {
-    try {
-      const configs = this.#axiosConfig({
-        url: "/orders/" + param.order_id,
-        version: "v2",
-        method: "DELETE",
-      });
-      return axios.request(configs).then((res) => {
-        if (res.status === 200) return res.data;
-      });
-    } catch (error) {
-      throw error;
-    }
+  getAllOpenPositions(): Promise<object> {
+    return new Positions(this.auth).getAllOpenPositions();
+  }
+  closeAllPositions(param: CloseAllPositions): Promise<object> {
+    return new Positions(this.auth).closeAllPositions(param);
+  }
+  getOpenPosition(param: GetOpenPosition): Promise<object> {
+    return new Positions(this.auth).getOpenPosition(param);
+  }
+  closePosition(param: ClosePosition): Promise<object> {
+    return new Positions(this.auth).closePosition(param);
+  }
+  exerciseOptionPosition(param: ExerciseOptionPosition): Promise<object> {
+    return new Positions(this.auth).exerciseOptionPosition(param);
   }
 }
 

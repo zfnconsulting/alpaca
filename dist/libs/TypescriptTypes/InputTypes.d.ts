@@ -1,27 +1,20 @@
-type Authentication_input = {
+type Authentication = {
     keyId: string;
     secretKey: string;
     paper: boolean;
 };
 type symbol_or_asset_id = string;
-type GetAnAssetByIDorSymbol_input = {
+type GetAnAssetByIDorSymbol = {
     symbol_or_asset_id: symbol_or_asset_id;
 };
-type AxiosConfig_input = {
-    url: string;
-    version: string;
-    method: string;
-    data?: object;
-    params?: object;
-};
 type status = string;
-type GetAssetsParams_input = {
+type GetAssetsParams = {
     status?: status;
     asset_class?: string;
     exchange?: string;
     attributes?: string;
 };
-type GetOptionContracts_input = {
+type GetOptionContracts = {
     underlying_symbols?: string;
     show_deliverables?: boolean;
     status?: status;
@@ -36,10 +29,10 @@ type GetOptionContracts_input = {
     page_token?: string;
     limit?: number;
 };
-type GetOptionContractByIDorSymbol_Input = {
+type GetOptionContractByIDorSymbol = {
     symbol_or_asset_id: symbol_or_asset_id;
 };
-type GetAnnouncements_Input = {
+type GetAnnouncements = {
     ca_types: string;
     since: string;
     until: string;
@@ -47,7 +40,7 @@ type GetAnnouncements_Input = {
     cusip?: string;
     date_type?: string;
 };
-type CreateAnOrder_input = {
+type CreateAnOrder = {
     symbol: string;
     qty?: string;
     notional?: string;
@@ -65,7 +58,7 @@ type CreateAnOrder_input = {
     stop_loss?: object;
     position_intent?: string;
 };
-type GetAllOrders_Input = {
+type GetAllOrders = {
     status?: string;
     limit?: number;
     after?: Time;
@@ -99,4 +92,18 @@ interface ReplaceOrderbyID {
 interface DeleteOrderbyID {
     order_id: string;
 }
-export { Authentication_input as Authentication, GetAssetsParams_input as GetAssetsParams, AxiosConfig_input as AxiosConfig, GetAnAssetByIDorSymbol_input as GetAnAssetByIDorSymbol, GetOptionContracts_input as GetOptionContracts, GetOptionContractByIDorSymbol_Input as GetOptionContractByIDorSymbol, GetAnnouncements_Input as GetAnnouncements, CreateAnOrder_input as CreateAnOrder, GetAllOrders_Input as GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, };
+interface CloseAllPositions {
+    cancel_orders: boolean;
+}
+interface GetOpenPosition {
+    symbol_or_asset_id: symbol_or_asset_id;
+}
+interface ClosePosition {
+    symbol_or_asset_id: symbol_or_asset_id;
+    qty?: string;
+    percentage?: string;
+}
+interface ExerciseOptionPosition {
+    symbol_or_contract_id: string;
+}
+export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, };
