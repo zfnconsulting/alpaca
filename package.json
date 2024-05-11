@@ -13,7 +13,8 @@
     "dev:start": "nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
     "build:types": "tsc",
     "git": "sh Shell/Github/git.sh",
-    "npm:publish": "npm run build:types && npm publish --access public"
+    "npm:publish": "npm run build:types && npm publish --access public",
+    "createClass": "sh Shell/class/createClass.sh"
   },
   "keywords": [
     "Trading",
@@ -36,6 +37,7 @@
     "@babel/core": "^7.21.0",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@zufan_devops/console": "^1.2.1",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"

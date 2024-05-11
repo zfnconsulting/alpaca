@@ -117,6 +117,18 @@ interface ClosePosition {
 interface ExerciseOptionPosition {
   symbol_or_contract_id: string;
 }
+
+interface GetAccountPortfolioHistory {
+  period?: string; // e.g., "1D", "1W", "1M", "1A"
+  timeframe?: string; // e.g., "1Min", "5Min", "15Min", "1H", "1D"
+  intraday_reporting?: "market_hours" | "extended_hours" | "continuous";
+  start?: string; // RFC3339 format date-time string
+  end?: string; // RFC3339 format date-time string
+  pnl_reset?: "per_day" | "no_reset";
+  date_end?: string; // Deprecated: use 'end' instead
+  extended_hours?: boolean; // Deprecated: use 'intraday_reporting' instead
+}
+
 export {
   Authentication,
   GetAssetsParams,
@@ -133,4 +145,5 @@ export {
   GetOpenPosition,
   ClosePosition,
   ExerciseOptionPosition,
+  GetAccountPortfolioHistory,
 };

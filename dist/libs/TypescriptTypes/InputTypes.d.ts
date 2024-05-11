@@ -106,4 +106,14 @@ interface ClosePosition {
 interface ExerciseOptionPosition {
     symbol_or_contract_id: string;
 }
-export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, };
+interface GetAccountPortfolioHistory {
+    period?: string;
+    timeframe?: string;
+    intraday_reporting?: "market_hours" | "extended_hours" | "continuous";
+    start?: string;
+    end?: string;
+    pnl_reset?: "per_day" | "no_reset";
+    date_end?: string;
+    extended_hours?: boolean;
+}
+export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, };

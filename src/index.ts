@@ -15,12 +15,14 @@ import {
   GetOpenPosition,
   ClosePosition,
   ExerciseOptionPosition,
+  GetAccountPortfolioHistory,
 } from "./libs/TypescriptTypes/InputTypes";
 import Account from "./libs/Alpaca/Account/Account";
 import Assets from "./libs/Alpaca/Assets/Assets";
 import CorporateActions from "./libs/Alpaca/CorporateActions/CorporateActions";
 import Orders from "./libs/Alpaca/Order/Orders";
 import Positions from "./libs/Alpaca/Positions/Positions";
+import PortfolioHistory from "./libs/Alpaca/PortfolioHistory/PortfolioHistory";
 
 class Alpaca {
   constructor(private readonly auth: Authentication) {
@@ -81,6 +83,9 @@ class Alpaca {
   }
   exerciseOptionPosition(param: ExerciseOptionPosition): Promise<object> {
     return new Positions(this.auth).exerciseOptionPosition(param);
+  }
+  getPortfolioHistory(param: GetAccountPortfolioHistory) {
+    return new PortfolioHistory(this.auth).getAccountPortfolioHistory(param);
   }
 }
 

@@ -1,4 +1,4 @@
-import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition } from "./libs/TypescriptTypes/InputTypes";
+import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory } from "./libs/TypescriptTypes/InputTypes";
 declare class Alpaca {
     private readonly auth;
     constructor(auth: Authentication);
@@ -20,5 +20,6 @@ declare class Alpaca {
     getOpenPosition(param: GetOpenPosition): Promise<object>;
     closePosition(param: ClosePosition): Promise<object>;
     exerciseOptionPosition(param: ExerciseOptionPosition): Promise<object>;
+    getPortfolioHistory(param: GetAccountPortfolioHistory): Promise<any>;
 }
 export default Alpaca;

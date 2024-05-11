@@ -35,6 +35,7 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [getOpenPosition(param: GetOpenPosition)](#getopenpositionparam-getopenposition-promiseobject)
   - [closePosition(param: ClosePosition)](#closepositionparam-closeposition-promiseobject)
   - [exerciseOptionPosition(param: ExerciseOptionPosition)](#exerciseoptionpositionparam-exerciseoptionposition-promiseobject)
+  - [getPortfolioHistory(param: GetAccountPortfolioHistory)](#getPortfolioHistoryparam-GetAccountPortfolioHistory)
 
 ## Installation And Usage
 
@@ -199,3 +200,17 @@ Exercises an option position identified by its symbol or contract ID.
 
 - `param`: An object containing parameters for exercising an option position.
   - `symbol_or_contract_id`: A string representing either the symbol or contract ID of the option position to exercise.
+
+### `getPortfolioHistory(param: GetAccountPortfolioHistory)`
+
+Retrieves historical portfolio data for the account.
+
+- `param`: An object containing parameters for retrieving portfolio history.
+  - `period` (optional): A string representing the time period for the data. Valid values include "1D" (1 day), "1W" (1 week), "1M" (1 month), and "1A" (1 year).
+  - `timeframe` (optional): A string representing the timeframe for the data. Valid values include "1Min", "5Min", "15Min", "1H" (1 hour), and "1D" (1 day).
+  - `intraday_reporting` (optional): A string indicating whether to report intraday data during market hours, extended hours, or continuously. Valid values are "market_hours", "extended_hours", or "continuous".
+  - `start` (optional): A string representing the start date and time of the data range in RFC3339 format.
+  - `end` (optional): A string representing the end date and time of the data range in RFC3339 format.
+  - `pnl_reset` (optional): A string indicating how profit and loss (PnL) data should be reset. Valid values are "per_day" or "no_reset".
+  - `date_end` (optional, deprecated): A string representing the end date and time of the data range in RFC3339 format. Deprecated, use `end` instead.
+  - `extended_hours` (optional, deprecated): A boolean indicating whether to include extended hours data. Deprecated, use `intraday_reporting` instead.

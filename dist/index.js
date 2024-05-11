@@ -8,6 +8,7 @@ const Assets_1 = __importDefault(require("./libs/Alpaca/Assets/Assets"));
 const CorporateActions_1 = __importDefault(require("./libs/Alpaca/CorporateActions/CorporateActions"));
 const Orders_1 = __importDefault(require("./libs/Alpaca/Order/Orders"));
 const Positions_1 = __importDefault(require("./libs/Alpaca/Positions/Positions"));
+const PortfolioHistory_1 = __importDefault(require("./libs/Alpaca/PortfolioHistory/PortfolioHistory"));
 class Alpaca {
     auth;
     constructor(auth) {
@@ -67,6 +68,9 @@ class Alpaca {
     }
     exerciseOptionPosition(param) {
         return new Positions_1.default(this.auth).exerciseOptionPosition(param);
+    }
+    getPortfolioHistory(param) {
+        return new PortfolioHistory_1.default(this.auth).getAccountPortfolioHistory(param);
     }
 }
 exports.default = Alpaca;
