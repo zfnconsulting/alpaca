@@ -129,6 +129,48 @@ interface GetAccountPortfolioHistory {
   extended_hours?: boolean; // Deprecated: use 'intraday_reporting' instead
 }
 
+interface CreateWatchlist {
+  name: string;
+  symbols?: string | string[];
+}
+
+interface GetWatchlistbyID {
+  watchlist_id: string;
+}
+
+interface UpdateWatchlistById {
+  watchlist_id: string;
+  name: string;
+  symbols: string | string[];
+}
+interface AddAssettoWatchlist {
+  watchlist_id: string;
+  symbols?: string | string[];
+}
+interface DeleteWatchlistById {
+  watchlist_id: string;
+}
+interface GetWatchlistbyName {
+  name: string;
+}
+interface UpdateWatchlistByName {
+  currentName: string;
+  newName: string;
+  symbols?: string | string[];
+}
+interface AddAssettoWatchlistByName {
+  name: string;
+  symbols?: string;
+}
+
+interface DeleteWatchlistByName {
+  name: string;
+}
+interface DeleteSymbolfromWatchlist {
+  watchlist_id: string;
+  symbol: string;
+}
+
 export {
   Authentication,
   GetAssetsParams,
@@ -146,4 +188,14 @@ export {
   ClosePosition,
   ExerciseOptionPosition,
   GetAccountPortfolioHistory,
+  CreateWatchlist,
+  GetWatchlistbyID,
+  UpdateWatchlistById,
+  AddAssettoWatchlist,
+  DeleteWatchlistById,
+  GetWatchlistbyName,
+  UpdateWatchlistByName,
+  AddAssettoWatchlistByName,
+  DeleteWatchlistByName,
+  DeleteSymbolfromWatchlist,
 };

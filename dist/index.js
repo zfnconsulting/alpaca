@@ -9,6 +9,7 @@ const CorporateActions_1 = __importDefault(require("./libs/Alpaca/CorporateActio
 const Orders_1 = __importDefault(require("./libs/Alpaca/Order/Orders"));
 const Positions_1 = __importDefault(require("./libs/Alpaca/Positions/Positions"));
 const PortfolioHistory_1 = __importDefault(require("./libs/Alpaca/PortfolioHistory/PortfolioHistory"));
+const Watchlists_1 = __importDefault(require("./libs/Alpaca/Watchlists/Watchlists"));
 class Alpaca {
     auth;
     constructor(auth) {
@@ -71,6 +72,40 @@ class Alpaca {
     }
     getPortfolioHistory(param) {
         return new PortfolioHistory_1.default(this.auth).getAccountPortfolioHistory(param);
+    }
+    // Watchlists
+    getAllWatchlists() {
+        return new Watchlists_1.default(this.auth).getAllWatchlists();
+    }
+    createWatchlist(data) {
+        return new Watchlists_1.default(this.auth).createWatchlist(data);
+    }
+    getWatchlistbyID(id) {
+        return new Watchlists_1.default(this.auth).getWatchlistbyID(id);
+    }
+    updateWatchlistById(id) {
+        return new Watchlists_1.default(this.auth).updateWatchlistById(id);
+    }
+    addAssettoWatchlist(id) {
+        return new Watchlists_1.default(this.auth).addAssettoWatchlist(id);
+    }
+    deleteWatchlistById(id) {
+        return new Watchlists_1.default(this.auth).deleteWatchlistById(id);
+    }
+    getWatchlistbyName(name) {
+        return new Watchlists_1.default(this.auth).getWatchlistbyName(name);
+    }
+    updateWatchlistByName(name) {
+        return new Watchlists_1.default(this.auth).updateWatchlistByName(name);
+    }
+    addAssettoWatchlistByName(name) {
+        return new Watchlists_1.default(this.auth).addAssettoWatchlistByName(name);
+    }
+    deleteWatchlistByName(name) {
+        return new Watchlists_1.default(this.auth).deleteWatchlistByName(name);
+    }
+    deleteSymbolfromWatchlist(id) {
+        return new Watchlists_1.default(this.auth).deleteSymbolfromWatchlist(id);
     }
 }
 exports.default = Alpaca;

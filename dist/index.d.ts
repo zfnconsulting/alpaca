@@ -1,4 +1,4 @@
-import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory } from "./libs/TypescriptTypes/InputTypes";
+import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist } from "./libs/TypescriptTypes/InputTypes";
 declare class Alpaca {
     private readonly auth;
     constructor(auth: Authentication);
@@ -21,5 +21,16 @@ declare class Alpaca {
     closePosition(param: ClosePosition): Promise<object>;
     exerciseOptionPosition(param: ExerciseOptionPosition): Promise<object>;
     getPortfolioHistory(param: GetAccountPortfolioHistory): Promise<any>;
+    getAllWatchlists(): Promise<object>;
+    createWatchlist(data: CreateWatchlist): Promise<object>;
+    getWatchlistbyID(id: GetWatchlistbyID): Promise<object>;
+    updateWatchlistById(id: UpdateWatchlistById): Promise<object>;
+    addAssettoWatchlist(id: AddAssettoWatchlist): Promise<object>;
+    deleteWatchlistById(id: DeleteWatchlistById): Promise<object>;
+    getWatchlistbyName(name: GetWatchlistbyName): Promise<object>;
+    updateWatchlistByName(name: UpdateWatchlistByName): Promise<object>;
+    addAssettoWatchlistByName(name: AddAssettoWatchlistByName): Promise<object>;
+    deleteWatchlistByName(name: DeleteWatchlistByName): Promise<object>;
+    deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist): Promise<object>;
 }
 export default Alpaca;

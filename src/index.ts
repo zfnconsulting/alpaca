@@ -16,6 +16,16 @@ import {
   ClosePosition,
   ExerciseOptionPosition,
   GetAccountPortfolioHistory,
+  CreateWatchlist,
+  GetWatchlistbyID,
+  UpdateWatchlistById,
+  AddAssettoWatchlist,
+  DeleteWatchlistById,
+  GetWatchlistbyName,
+  UpdateWatchlistByName,
+  AddAssettoWatchlistByName,
+  DeleteWatchlistByName,
+  DeleteSymbolfromWatchlist,
 } from "./libs/TypescriptTypes/InputTypes";
 import Account from "./libs/Alpaca/Account/Account";
 import Assets from "./libs/Alpaca/Assets/Assets";
@@ -23,6 +33,7 @@ import CorporateActions from "./libs/Alpaca/CorporateActions/CorporateActions";
 import Orders from "./libs/Alpaca/Order/Orders";
 import Positions from "./libs/Alpaca/Positions/Positions";
 import PortfolioHistory from "./libs/Alpaca/PortfolioHistory/PortfolioHistory";
+import Watchlists from "./libs/Alpaca/Watchlists/Watchlists";
 
 class Alpaca {
   constructor(private readonly auth: Authentication) {
@@ -86,6 +97,41 @@ class Alpaca {
   }
   getPortfolioHistory(param: GetAccountPortfolioHistory) {
     return new PortfolioHistory(this.auth).getAccountPortfolioHistory(param);
+  }
+
+  // Watchlists
+  getAllWatchlists(): Promise<object> {
+    return new Watchlists(this.auth).getAllWatchlists();
+  }
+  createWatchlist(data: CreateWatchlist): Promise<object> {
+    return new Watchlists(this.auth).createWatchlist(data);
+  }
+  getWatchlistbyID(id: GetWatchlistbyID): Promise<object> {
+    return new Watchlists(this.auth).getWatchlistbyID(id);
+  }
+  updateWatchlistById(id: UpdateWatchlistById): Promise<object> {
+    return new Watchlists(this.auth).updateWatchlistById(id);
+  }
+  addAssettoWatchlist(id: AddAssettoWatchlist): Promise<object> {
+    return new Watchlists(this.auth).addAssettoWatchlist(id);
+  }
+  deleteWatchlistById(id: DeleteWatchlistById): Promise<object> {
+    return new Watchlists(this.auth).deleteWatchlistById(id);
+  }
+  getWatchlistbyName(name: GetWatchlistbyName): Promise<object> {
+    return new Watchlists(this.auth).getWatchlistbyName(name);
+  }
+  updateWatchlistByName(name: UpdateWatchlistByName): Promise<object> {
+    return new Watchlists(this.auth).updateWatchlistByName(name);
+  }
+  addAssettoWatchlistByName(name: AddAssettoWatchlistByName): Promise<object> {
+    return new Watchlists(this.auth).addAssettoWatchlistByName(name);
+  }
+  deleteWatchlistByName(name: DeleteWatchlistByName): Promise<object> {
+    return new Watchlists(this.auth).deleteWatchlistByName(name);
+  }
+  deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist): Promise<object> {
+    return new Watchlists(this.auth).deleteSymbolfromWatchlist(id);
   }
 }
 

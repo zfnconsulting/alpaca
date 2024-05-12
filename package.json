@@ -11,6 +11,7 @@
   "scripts": {
     "dev:watch": "tsc -watch",
     "dev:start": "nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
+    "dev:test": "nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/test.ts",
     "build:types": "tsc",
     "git": "sh Shell/Github/git.sh",
     "npm:publish": "npm run build:types && npm publish --access public",
@@ -38,6 +39,7 @@
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "@zufan_devops/console": "^1.2.1",
+    "dotenv": "^16.0.3",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
