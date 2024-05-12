@@ -171,6 +171,17 @@ interface DeleteSymbolfromWatchlist {
   symbol: string;
 }
 
+interface AccountConfigurations {
+  dtbp_check?: string;
+  trade_confirm_email?: string;
+  suspend_trade?: boolean;
+  fractional_trading?: boolean;
+  max_margin_multiplier?: string;
+  max_options_trading_level?: number;
+  pdt_check?: string;
+  ptp_no_exception_entry?: string;
+}
+
 export {
   Authentication,
   GetAssetsParams,
@@ -198,4 +209,5 @@ export {
   AddAssettoWatchlistByName,
   DeleteWatchlistByName,
   DeleteSymbolfromWatchlist,
+  AccountConfigurations,
 };

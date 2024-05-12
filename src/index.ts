@@ -26,6 +26,7 @@ import {
   AddAssettoWatchlistByName,
   DeleteWatchlistByName,
   DeleteSymbolfromWatchlist,
+  AccountConfigurations,
 } from "./libs/TypescriptTypes/InputTypes";
 import Account from "./libs/Alpaca/Account/Account";
 import Assets from "./libs/Alpaca/Assets/Assets";
@@ -34,6 +35,7 @@ import Orders from "./libs/Alpaca/Order/Orders";
 import Positions from "./libs/Alpaca/Positions/Positions";
 import PortfolioHistory from "./libs/Alpaca/PortfolioHistory/PortfolioHistory";
 import Watchlists from "./libs/Alpaca/Watchlists/Watchlists";
+import AccountConfiguration from "./libs/Alpaca/AccountConfiguration/AccountConfiguration";
 
 class Alpaca {
   constructor(private readonly auth: Authentication) {
@@ -132,6 +134,14 @@ class Alpaca {
   }
   deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist): Promise<object> {
     return new Watchlists(this.auth).deleteSymbolfromWatchlist(id);
+  }
+  getAccountConfigurations(): Promise<object> {
+    return new AccountConfiguration(this.auth).getAccountConfigurations();
+  }
+  updateAccountConfigurations(data: AccountConfigurations): Promise<object> {
+    return new AccountConfiguration(this.auth).updateAccountConfigurations(
+      data
+    );
   }
 }
 

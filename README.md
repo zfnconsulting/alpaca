@@ -47,6 +47,8 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [addAssettoWatchlistByName(name: AddAssettoWatchlistByName)](#addassettoWatchlistbynameName-addassettowatchlistbyname)
   - [deleteWatchlistByName(name: DeleteWatchlistByName)](#deletewatchlistbynameName-deletewatchlistbyname)
   - [deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist)](#deletesymbolfromwatchlistid-deletesymbolfromwatchlist)
+  - [getAccountConfigurations()](#getaccountconfigurations)
+  - [updateAccountConfigurations(data: AccountConfigurations)](#updateaccountconfigurationsdata-accountconfigurations)
 
 ## Installation And Usage
 
@@ -307,3 +309,21 @@ Deletes a specific symbol from a watchlist by its ID.
 - `id`: An object containing the ID of the watchlist and the symbol to delete.
   - `watchlist_id`: A string representing the ID of the watchlist.
   - `symbol`: A string representing the symbol to delete from the watchlist.
+
+### `getAccountConfigurations()`
+
+Retrieves account configurations.
+
+### `updateAccountConfigurations(data: AccountConfigurations)`
+
+Updates account configurations.
+
+- `data`: An object containing data for updating account configurations.
+  - `dtbp_check` (optional): A string representing the day trade buying power check.
+  - `trade_confirm_email` (optional): A string representing the trade confirmation email.
+  - `suspend_trade` (optional): A boolean indicating whether to suspend trading.
+  - `fractional_trading` (optional): A boolean indicating whether fractional trading is allowed.
+  - `max_margin_multiplier` (optional): A string representing the maximum margin multiplier.
+  - `max_options_trading_level` (optional): A number representing the maximum options trading level.
+  - `pdt_check` (optional): A string representing the pattern day trader check.
+  - `ptp_no_exception_entry` (optional): A string representing the pre-trade plan no exception entry.

@@ -154,4 +154,14 @@ interface DeleteSymbolfromWatchlist {
     watchlist_id: string;
     symbol: string;
 }
-export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, };
+interface AccountConfigurations {
+    dtbp_check?: string;
+    trade_confirm_email?: string;
+    suspend_trade?: boolean;
+    fractional_trading?: boolean;
+    max_margin_multiplier?: string;
+    max_options_trading_level?: number;
+    pdt_check?: string;
+    ptp_no_exception_entry?: string;
+}
+export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, };

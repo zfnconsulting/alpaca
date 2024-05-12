@@ -10,6 +10,7 @@ const Orders_1 = __importDefault(require("./libs/Alpaca/Order/Orders"));
 const Positions_1 = __importDefault(require("./libs/Alpaca/Positions/Positions"));
 const PortfolioHistory_1 = __importDefault(require("./libs/Alpaca/PortfolioHistory/PortfolioHistory"));
 const Watchlists_1 = __importDefault(require("./libs/Alpaca/Watchlists/Watchlists"));
+const AccountConfiguration_1 = __importDefault(require("./libs/Alpaca/AccountConfiguration/AccountConfiguration"));
 class Alpaca {
     auth;
     constructor(auth) {
@@ -106,6 +107,12 @@ class Alpaca {
     }
     deleteSymbolfromWatchlist(id) {
         return new Watchlists_1.default(this.auth).deleteSymbolfromWatchlist(id);
+    }
+    getAccountConfigurations() {
+        return new AccountConfiguration_1.default(this.auth).getAccountConfigurations();
+    }
+    updateAccountConfigurations(data) {
+        return new AccountConfiguration_1.default(this.auth).updateAccountConfigurations(data);
     }
 }
 exports.default = Alpaca;
