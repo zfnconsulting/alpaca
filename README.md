@@ -36,6 +36,18 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [closePosition(param: ClosePosition)](#closepositionparam-closeposition-promiseobject)
   - [exerciseOptionPosition(param: ExerciseOptionPosition)](#exerciseoptionpositionparam-exerciseoptionposition-promiseobject)
   - [getPortfolioHistory(param: GetAccountPortfolioHistory)](#getPortfolioHistoryparam-GetAccountPortfolioHistory)
+  ## Table of Contents
+- [getAllWatchlists()](#getallwatchlists)
+- [createWatchlist(data: CreateWatchlist)](#createwatchlistdata-createwatchlist)
+- [getWatchlistbyID(id: GetWatchlistbyID)](#getwatchlistbyidid-getwatchlistbyid)
+- [updateWatchlistById(id: UpdateWatchlistById)](#updatewatchlistbyidid-updatewatchlistbyid)
+- [addAssettoWatchlist(id: AddAssettoWatchlist)](#addassettoWatchlistid-addassettowatchlist)
+- [deleteWatchlistById(id: DeleteWatchlistById)](#deletewatchlistbyidid-deletewatchlistbyid)
+- [getWatchlistbyName(name: GetWatchlistbyName)](#getwatchlistbynameName-getwatchlistbyname)
+- [updateWatchlistByName(name: UpdateWatchlistByName)](#updatewatchlistbynameName-updatewatchlistbyname)
+- [addAssettoWatchlistByName(name: AddAssettoWatchlistByName)](#addassettoWatchlistbynameName-addassettowatchlistbyname)
+- [deleteWatchlistByName(name: DeleteWatchlistByName)](#deletewatchlistbynameName-deletewatchlistbyname)
+- [deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist)](#deletesymbolfromwatchlistid-deletesymbolfromwatchlist)
 
 ## Installation And Usage
 
@@ -214,3 +226,85 @@ Retrieves historical portfolio data for the account.
   - `pnl_reset` (optional): A string indicating how profit and loss (PnL) data should be reset. Valid values are "per_day" or "no_reset".
   - `date_end` (optional, deprecated): A string representing the end date and time of the data range in RFC3339 format. Deprecated, use `end` instead.
   - `extended_hours` (optional, deprecated): A boolean indicating whether to include extended hours data. Deprecated, use `intraday_reporting` instead.
+
+### `getAllWatchlists()`
+
+Retrieves a list of all watchlists associated with the account.
+
+### `createWatchlist(data: CreateWatchlist)`
+
+Creates a new watchlist.
+
+- `data`: An object containing data for creating a new watchlist.
+  - `name`: A string representing the name of the new watchlist.
+  - `symbols` (optional): A string or an array of strings representing symbols to be added to the watchlist.
+
+### `getWatchlistbyID(id: GetWatchlistbyID)`
+
+Retrieves a specific watchlist by its ID.
+
+- `id`: An object containing the ID of the watchlist to retrieve.
+  - `watchlist_id`: A string representing the ID of the watchlist.
+
+### `updateWatchlistById(id: UpdateWatchlistById)`
+
+Updates a specific watchlist by its ID.
+
+- `id`: An object containing the ID of the watchlist to update.
+  - `watchlist_id`: A string representing the ID of the watchlist.
+  - `name`: A string representing the new name for the watchlist.
+  - `symbols`: A string or an array of strings representing symbols to be added to the watchlist.
+
+### `addAssettoWatchlist(id: AddAssettoWatchlist)`
+
+Adds assets to a specific watchlist by its ID.
+
+- `id`: An object containing the ID of the watchlist and symbols to add assets.
+  - `watchlist_id`: A string representing the ID of the watchlist.
+  - `symbols` (optional): A string or an array of strings representing symbols to be added to the watchlist.
+
+### `deleteWatchlistById(id: DeleteWatchlistById)`
+
+Deletes a specific watchlist by its ID.
+
+- `id`: An object containing the ID of the watchlist to delete.
+  - `watchlist_id`: A string representing the ID of the watchlist.
+
+### `getWatchlistbyName(name: GetWatchlistbyName)`
+
+Retrieves a specific watchlist by its name.
+
+- `name`: An object containing the name of the watchlist to retrieve.
+  - `name`: A string representing the name of the watchlist.
+
+### `updateWatchlistByName(name: UpdateWatchlistByName)`
+
+Updates a specific watchlist by its name.
+
+- `name`: An object containing the current name of the watchlist, the new name, and optional symbols to add.
+  - `currentName`: A string representing the current name of the watchlist.
+  - `newName`: A string representing the new name for the watchlist.
+  - `symbols` (optional): A string or an array of strings representing symbols to be added to the watchlist.
+
+### `addAssettoWatchlistByName(name: AddAssettoWatchlistByName)`
+
+Adds assets to a specific watchlist by its name.
+
+- `name`: An object containing the name of the watchlist and symbols to add assets.
+  - `name`: A string representing the name of the watchlist.
+  - `symbols` (optional): A string representing a symbol to be added to the watchlist.
+
+### `deleteWatchlistByName(name: DeleteWatchlistByName)`
+
+Deletes a specific watchlist by its name.
+
+- `name`: An object containing the name of the watchlist to delete.
+  - `name`: A string representing the name of the watchlist.
+
+### `deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist)`
+
+Deletes a specific symbol from a watchlist by its ID.
+
+- `id`: An object containing the ID of the watchlist and the symbol to delete.
+  - `watchlist_id`: A string representing the ID of the watchlist.
+  - `symbol`: A string representing the symbol to delete from the watchlist.
