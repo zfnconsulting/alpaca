@@ -182,6 +182,12 @@ interface AccountConfigurations {
   ptp_no_exception_entry?: string;
 }
 
+interface GetMarketCalendarinfo {
+  start?: string;
+  end?: string;
+  date_type?: string;
+}
+
 export {
   Authentication,
   GetAssetsParams,
@@ -210,4 +216,5 @@ export {
   DeleteWatchlistByName,
   DeleteSymbolfromWatchlist,
   AccountConfigurations,
+  GetMarketCalendarinfo,
 };

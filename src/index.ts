@@ -27,6 +27,7 @@ import {
   DeleteWatchlistByName,
   DeleteSymbolfromWatchlist,
   AccountConfigurations,
+  GetMarketCalendarinfo,
 } from "./libs/TypescriptTypes/InputTypes";
 import Account from "./libs/Alpaca/Account/Account";
 import Assets from "./libs/Alpaca/Assets/Assets";
@@ -36,6 +37,8 @@ import Positions from "./libs/Alpaca/Positions/Positions";
 import PortfolioHistory from "./libs/Alpaca/PortfolioHistory/PortfolioHistory";
 import Watchlists from "./libs/Alpaca/Watchlists/Watchlists";
 import AccountConfiguration from "./libs/Alpaca/AccountConfiguration/AccountConfiguration";
+import Clock from "./libs/Alpaca/Clock/Clock";
+import Calendar from "./libs/Alpaca/Calendar/Calendar";
 
 class Alpaca {
   constructor(private readonly auth: Authentication) {
@@ -142,6 +145,12 @@ class Alpaca {
     return new AccountConfiguration(this.auth).updateAccountConfigurations(
       data
     );
+  }
+  getMarketCalendarinfo(param?: GetMarketCalendarinfo): Promise<object> {
+    return new Calendar(this.auth).getMarketCalendarinfo(param);
+  }
+  clockAndCalendar(): Promise<object> {
+    return new Clock(this.auth).getMarketClockInfo();
   }
 }
 

@@ -49,6 +49,8 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist)](#deletesymbolfromwatchlistid-deletesymbolfromwatchlist)
   - [getAccountConfigurations()](#getaccountconfigurations)
   - [updateAccountConfigurations(data: AccountConfigurations)](#updateaccountconfigurationsdata-accountconfigurations)
+  - [getMarketCalendarinfo(param?: GetMarketCalendarinfo)](#getmarketcalendarinfoparam-getmarketcalendarinfo)
+  - [ClockAndCalendar()](#clockandcalendar)
 
 ## Installation And Usage
 
@@ -327,3 +329,16 @@ Updates account configurations.
   - `max_options_trading_level` (optional): A number representing the maximum options trading level.
   - `pdt_check` (optional): A string representing the pattern day trader check.
   - `ptp_no_exception_entry` (optional): A string representing the pre-trade plan no exception entry.
+
+### `getMarketCalendarinfo(param?: GetMarketCalendarinfo)`
+
+Retrieves market calendar information within a specified date range.
+
+- `param` (optional): An object containing parameters for retrieving market calendar information.
+  - `start` (optional): A string representing the start date of the date range in RFC3339 format.
+  - `end` (optional): A string representing the end date of the date range in RFC3339 format.
+  - `date_type` (optional): A string representing the type of dates to retrieve. Valid values include "trade" for trading days and "holiday" for holidays.
+
+### `ClockAndCalendar()`
+
+Retrieves information about the market clock and calendar.
