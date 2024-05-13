@@ -53,6 +53,14 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [updateAccountConfigurations(data: AccountConfigurations)](#updateaccountconfigurationsdata-accountconfigurations)
   - [getMarketCalendarinfo(param?: GetMarketCalendarinfo)](#getmarketcalendarinfoparam-getmarketcalendarinfo)
   - [ClockAndCalendar()](#clockandcalendar)
+  - [getRetrieveCryptoFundingWallets(param: GetRetrieveCryptoFundingWallets)](#getretrievecryptofundingwalletsparam-getretrievecryptofundingwallets)
+  - [getRetrieveCryptoFundingTransfer()](#getretrievecryptofundingtransfer)
+  - [requestNewWithdrawal(data: RequestNewWithdrawal)](#requestnewwithdrawaldata-requestnewwithdrawal)
+  - [getRetrieveSingleCryptoFundingTransfer(queryParams: GetRetrieveCryptoFundingTransfer)](#getretrievesinglecryptofundingtransferqueryparams-getretrievecryptofundingtransfer)
+  - [getArrayofWhitelistedAddresses(queryParams: GetRetrieveCryptoFundingWallets)](#getarrayofwhitelistedaddressesqueryparams-getretrievecryptofundingwallets)
+  - [requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress)](#requestnewwhitelistedaddressdata-requestnewwhitelistedaddress)
+  - [deleteWhitelistedAddress(data: DeleteWhitelistedAddress)](#deletewhitelistedaddressdata-deletewhitelistedaddress)
+  - [getEstimatedGasFee(queryParams: GetEstimatedGasFee)](#getestimatedgasfeequeryparams-getestimatedgasfee)
 
 ## Installation And Usage
 
@@ -344,3 +352,62 @@ Retrieves market calendar information within a specified date range.
 ### `ClockAndCalendar()`
 
 Retrieves information about the market clock and calendar.
+
+### `getRetrieveCryptoFundingWallets(param: GetRetrieveCryptoFundingWallets)`
+
+Retrieves information about crypto funding wallets.
+
+- `param`: An object containing parameters for retrieving crypto funding wallets.
+  - `asset` (optional): A string representing the asset symbol for which to retrieve funding wallets.
+
+### `getRetrieveCryptoFundingTransfer()`
+
+Retrieves information about a crypto funding transfer.
+
+### `requestNewWithdrawal(data: RequestNewWithdrawal)`
+
+Requests a new withdrawal of crypto funds.
+
+- `data`: An object containing data for the new withdrawal request.
+  - `amount`: A string representing the amount of crypto to withdraw.
+  - `address`: A string representing the destination address for the withdrawal.
+  - `asset`: A string representing the asset symbol to withdraw.
+
+### `getRetrieveSingleCryptoFundingTransfer(queryParams: GetRetrieveCryptoFundingTransfer)`
+
+Retrieves information about a specific crypto funding transfer.
+
+- `queryParams`: An object containing parameters for retrieving a specific crypto funding transfer.
+  - `transfer_id`: A string representing the ID of the crypto funding transfer to retrieve.
+
+### `getArrayofWhitelistedAddresses(queryParams: GetRetrieveCryptoFundingWallets)`
+
+Retrieves an array of whitelisted addresses for crypto funding.
+
+- `queryParams`: An object containing parameters for retrieving whitelisted addresses.
+  - `asset` (optional): A string representing the asset symbol for which to retrieve whitelisted addresses.
+
+### `requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress)`
+
+Requests to whitelist a new address for crypto funding.
+
+- `data`: An object containing data for the new whitelisted address request.
+  - `address` (optional): A string representing the address to whitelist.
+  - `asset` (optional): A string representing the asset symbol for which to whitelist the address.
+
+### `deleteWhitelistedAddress(data: DeleteWhitelistedAddress)`
+
+Deletes a whitelisted address for crypto funding.
+
+- `data`: An object containing data for deleting a whitelisted address.
+  - `whitelisted_address_id`: A string representing the ID of the whitelisted address to delete.
+
+### `getEstimatedGasFee(queryParams: GetEstimatedGasFee)`
+
+Retrieves the estimated gas fee for a crypto transaction.
+
+- `queryParams`: An object containing parameters for estimating the gas fee.
+  - `asset` (optional): A string representing the asset symbol for the transaction.
+  - `from_address` (optional): A string representing the sender's address.
+  - `to_address` (optional): A string representing the recipient's address.
+  - `amount` (optional): A string representing the amount of crypto for the transaction.
