@@ -1,6 +1,6 @@
 import { l } from "@zufan_devops/console";
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
-import { AccountConfigurations } from "../../TypescriptTypes/InputTypes";
+import { AccountConfigurations } from "../../TypescriptTypes/TradingAPI";
 import axios from "axios";
 class AccountConfiguration extends AlpacaConfig {
   getAccountConfigurations() {

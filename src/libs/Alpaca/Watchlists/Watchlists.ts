@@ -12,7 +12,7 @@ import {
   AddAssettoWatchlistByName,
   DeleteWatchlistByName,
   DeleteSymbolfromWatchlist,
-} from "../../TypescriptTypes/InputTypes";
+} from "../../TypescriptTypes/TradingAPI";
 
 class Watchlists extends AlpacaConfig {
   getAllWatchlists() {

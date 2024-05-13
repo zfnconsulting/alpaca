@@ -1,4 +1,4 @@
-import { GetAnnouncements } from "../../TypescriptTypes/InputTypes";
+import { GetAnnouncements } from "../../TypescriptTypes/TradingAPI";
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 export default class CorporateActions extends AlpacaConfig {
     getSpecificAnnouncement(id: string): Promise<any>;

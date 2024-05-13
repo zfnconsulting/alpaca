@@ -1,5 +1,5 @@
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
-import { CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist } from "../../TypescriptTypes/InputTypes";
+import { CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist } from "../../TypescriptTypes/TradingAPI";
 declare class Watchlists extends AlpacaConfig {
     getAllWatchlists(): Promise<any>;
     createWatchlist(data: CreateWatchlist): Promise<any>;

@@ -1,5 +1,5 @@
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
-import { GetRetrieveCryptoFundingWallets, RequestNewWithdrawal, GetRetrieveCryptoFundingTransfer, RequestNewWhitelistedAddress, DeleteWhitelistedAddress, GetEstimatedGasFee } from "../../TypescriptTypes/InputTypes";
+import { GetRetrieveCryptoFundingWallets, RequestNewWithdrawal, GetRetrieveCryptoFundingTransfer, RequestNewWhitelistedAddress, DeleteWhitelistedAddress, GetEstimatedGasFee } from "../../TypescriptTypes/TradingAPI";
 declare class CryptoFunding extends AlpacaConfig {
     getRetrieveCryptoFundingWallets(queryParams: GetRetrieveCryptoFundingWallets): Promise<any>;
     getRetrieveCryptoFundingTransfer(): Promise<any>;

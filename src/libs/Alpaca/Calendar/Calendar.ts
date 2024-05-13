@@ -1,7 +1,7 @@
 import { l } from "@zufan_devops/console";
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 import axios from "axios";
-import { GetMarketCalendarinfo } from "../../TypescriptTypes/InputTypes";
+import { GetMarketCalendarinfo } from "../../TypescriptTypes/TradingAPI";
 class Calendar extends AlpacaConfig {
   getMarketCalendarinfo(query?: GetMarketCalendarinfo) {
     try {

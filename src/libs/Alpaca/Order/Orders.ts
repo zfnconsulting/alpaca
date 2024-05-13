@@ -5,7 +5,7 @@ import {
   GetOrderById,
   ReplaceOrderbyID,
   DeleteOrderbyID,
-} from "../../TypescriptTypes/InputTypes"; // input types
+} from "../../TypescriptTypes/TradingAPI"; // input types
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 import timeFormatByKey from "../../dataTime/time";
 export default class Orders extends AlpacaConfig {

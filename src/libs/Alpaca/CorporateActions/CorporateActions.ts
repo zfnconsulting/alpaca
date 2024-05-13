@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GetAnnouncements } from "../../TypescriptTypes/InputTypes"; // input types
+import { GetAnnouncements } from "../../TypescriptTypes/TradingAPI"; // input types
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 export default class CorporateActions extends AlpacaConfig {
   getSpecificAnnouncement(id: string) {

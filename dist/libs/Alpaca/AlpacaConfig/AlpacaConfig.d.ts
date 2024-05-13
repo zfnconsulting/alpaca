@@ -1,5 +1,5 @@
 import HTTPConfig from "../HTTPConfig/HTTPConfig";
-import { Authentication } from "../../TypescriptTypes/InputTypes";
+import { Authentication } from "../../TypescriptTypes/TradingAPI";
 export default class AlpacaConfig {
     protected readonly auth: Authentication;
     protected readonly httpConfig: HTTPConfig;

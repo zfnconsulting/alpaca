@@ -4,7 +4,7 @@ import {
   GetAnAssetByIDorSymbol,
   GetOptionContracts,
   GetOptionContractByIDorSymbol,
-} from "../../TypescriptTypes/InputTypes"; // input types
+} from "../../TypescriptTypes/TradingAPI"; // input types
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 export default class Assets extends AlpacaConfig {
   getAssets(params?: GetAssetsParams) {

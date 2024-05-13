@@ -1,4 +1,4 @@
-import { Authentication } from "../../TypescriptTypes/InputTypes"; //
+import { Authentication } from "../../TypescriptTypes/TradingAPI"; //
 import {
   AxiosParmConfig,
   AxiosConfigurationObject,

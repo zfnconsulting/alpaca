@@ -1,4 +1,4 @@
-import { GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol } from "../../TypescriptTypes/InputTypes";
+import { GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol } from "../../TypescriptTypes/TradingAPI";
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 export default class Assets extends AlpacaConfig {
     getAssets(params?: GetAssetsParams): Promise<any>;

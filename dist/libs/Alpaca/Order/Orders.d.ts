@@ -1,4 +1,4 @@
-import { CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID } from "../../TypescriptTypes/InputTypes";
+import { CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID } from "../../TypescriptTypes/TradingAPI";
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 export default class Orders extends AlpacaConfig {
     createAnOrder(param: CreateAnOrder): Promise<any>;

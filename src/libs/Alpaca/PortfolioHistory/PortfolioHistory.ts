@@ -1,6 +1,6 @@
 import axios from "axios";
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
-import { GetAccountPortfolioHistory } from "../../TypescriptTypes/InputTypes";
+import { GetAccountPortfolioHistory } from "../../TypescriptTypes/TradingAPI";
 class PortfolioHistory extends AlpacaConfig {
   getAccountPortfolioHistory(query: GetAccountPortfolioHistory) {
     try {

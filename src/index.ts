@@ -34,7 +34,7 @@ import {
   RequestNewWhitelistedAddress,
   DeleteWhitelistedAddress,
   GetEstimatedGasFee,
-} from "./libs/TypescriptTypes/InputTypes";
+} from "./libs/TypescriptTypes/TradingAPI";
 import Account from "./libs/Alpaca/Account/Account";
 import Assets from "./libs/Alpaca/Assets/Assets";
 import CorporateActions from "./libs/Alpaca/CorporateActions/CorporateActions";

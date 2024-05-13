@@ -8,7 +8,7 @@ import {
   RequestNewWhitelistedAddress,
   DeleteWhitelistedAddress,
   GetEstimatedGasFee,
-} from "../../TypescriptTypes/InputTypes";
+} from "../../TypescriptTypes/TradingAPI";
 class CryptoFunding extends AlpacaConfig {
   getRetrieveCryptoFundingWallets(
     queryParams: GetRetrieveCryptoFundingWallets

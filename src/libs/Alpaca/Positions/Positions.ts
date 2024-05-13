@@ -4,7 +4,7 @@ import {
   GetOpenPosition,
   ClosePosition,
   ExerciseOptionPosition,
-} from "../../TypescriptTypes/InputTypes"; // input types
+} from "../../TypescriptTypes/TradingAPI"; // input types
 import AlpacaConfig from "../AlpacaConfig/AlpacaConfig";
 export default class Positions extends AlpacaConfig {
   getAllOpenPositions() {
