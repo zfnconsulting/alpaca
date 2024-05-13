@@ -188,6 +188,33 @@ interface GetMarketCalendarinfo {
   date_type?: string;
 }
 
+interface GetRetrieveCryptoFundingWallets {
+  asset?: string;
+}
+interface RequestNewWithdrawal {
+  amount: string;
+  address: string;
+  asset: string;
+}
+
+interface GetRetrieveCryptoFundingTransfer {
+  transfer_id: string;
+}
+
+interface RequestNewWhitelistedAddress {
+  address?: string;
+  asset?: string;
+}
+interface DeleteWhitelistedAddress {
+  whitelisted_address_id: string;
+}
+interface GetEstimatedGasFee {
+  asset?: string;
+  from_address?: string;
+  to_address?: string;
+  amount?: string;
+}
+
 export {
   Authentication,
   GetAssetsParams,
@@ -217,4 +244,19 @@ export {
   DeleteSymbolfromWatchlist,
   AccountConfigurations,
   GetMarketCalendarinfo,
+  GetRetrieveCryptoFundingWallets,
+  RequestNewWithdrawal,
+  GetRetrieveCryptoFundingTransfer,
+  RequestNewWhitelistedAddress,
+  DeleteWhitelistedAddress,
+  GetEstimatedGasFee,
 };
+
+// GetRetrieveCryptoFundingWallets, d
+// GetRetrieveCryptoFundingTransfers, d
+// RequestNewWithdrawal, d
+// GetRetrieveCryptoFundingTransfer,
+// GetArrayofWhitelistedAddresses,
+// RequestNewWhitelistedAddress, d
+// DeleteWhitelistedAddress, d
+// GetEstimatedGasFee;

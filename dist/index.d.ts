@@ -1,4 +1,4 @@
-import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations } from "./libs/TypescriptTypes/InputTypes";
+import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, GetMarketCalendarinfo } from "./libs/TypescriptTypes/InputTypes";
 declare class Alpaca {
     private readonly auth;
     constructor(auth: Authentication);
@@ -34,5 +34,7 @@ declare class Alpaca {
     deleteSymbolfromWatchlist(id: DeleteSymbolfromWatchlist): Promise<object>;
     getAccountConfigurations(): Promise<object>;
     updateAccountConfigurations(data: AccountConfigurations): Promise<object>;
+    getMarketCalendarinfo(param?: GetMarketCalendarinfo): Promise<object>;
+    clockAndCalendar(): Promise<object>;
 }
 export default Alpaca;

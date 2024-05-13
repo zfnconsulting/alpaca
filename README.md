@@ -8,6 +8,8 @@ This is my version of Alpaca's Trading API Documentation. I found the current Al
 
 The Alpaca Trading API provides a comprehensive set of endpoints for managing trading activities, account information, market data, and more. It is designed for developers looking to create automated trading systems or integrate Alpaca's functionalities into their applications.
 
+## [Support This Project](#https://buymeacoffee.com/zufans)
+
 ## API Documentation
 
 The REST API documentation can be found in https://docs.alpaca.markets. For detailed information about an endpoint, please consult the REST API docs. Documentation specific to this library can be found below.

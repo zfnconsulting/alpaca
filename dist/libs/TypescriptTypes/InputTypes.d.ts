@@ -169,4 +169,28 @@ interface GetMarketCalendarinfo {
     end?: string;
     date_type?: string;
 }
-export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, GetMarketCalendarinfo, };
+interface GetRetrieveCryptoFundingWallets {
+    asset?: string;
+}
+interface RequestNewWithdrawal {
+    amount: string;
+    address: string;
+    asset: string;
+}
+interface GetRetrieveCryptoFundingTransfer {
+    transfer_id: string;
+}
+interface RequestNewWhitelistedAddress {
+    address?: string;
+    asset?: string;
+}
+interface DeleteWhitelistedAddress {
+    whitelisted_address_id: string;
+}
+interface GetEstimatedGasFee {
+    asset?: string;
+    from_address?: string;
+    to_address?: string;
+    amount?: string;
+}
+export { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, GetMarketCalendarinfo, GetRetrieveCryptoFundingWallets, RequestNewWithdrawal, GetRetrieveCryptoFundingTransfer, RequestNewWhitelistedAddress, DeleteWhitelistedAddress, GetEstimatedGasFee, };

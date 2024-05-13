@@ -11,6 +11,8 @@ const Positions_1 = __importDefault(require("./libs/Alpaca/Positions/Positions")
 const PortfolioHistory_1 = __importDefault(require("./libs/Alpaca/PortfolioHistory/PortfolioHistory"));
 const Watchlists_1 = __importDefault(require("./libs/Alpaca/Watchlists/Watchlists"));
 const AccountConfiguration_1 = __importDefault(require("./libs/Alpaca/AccountConfiguration/AccountConfiguration"));
+const Clock_1 = __importDefault(require("./libs/Alpaca/Clock/Clock"));
+const Calendar_1 = __importDefault(require("./libs/Alpaca/Calendar/Calendar"));
 class Alpaca {
     auth;
     constructor(auth) {
@@ -113,6 +115,12 @@ class Alpaca {
     }
     updateAccountConfigurations(data) {
         return new AccountConfiguration_1.default(this.auth).updateAccountConfigurations(data);
+    }
+    getMarketCalendarinfo(param) {
+        return new Calendar_1.default(this.auth).getMarketCalendarinfo(param);
+    }
+    clockAndCalendar() {
+        return new Clock_1.default(this.auth).getMarketClockInfo();
     }
 }
 exports.default = Alpaca;
