@@ -35,17 +35,17 @@ import {
   DeleteWhitelistedAddress,
   GetEstimatedGasFee,
 } from "./libs/TypescriptTypes/TradingAPI";
-import Account from "./libs/Alpaca/Account/Account";
-import Assets from "./libs/Alpaca/Assets/Assets";
-import CorporateActions from "./libs/Alpaca/CorporateActions/CorporateActions";
-import Orders from "./libs/Alpaca/Order/Orders";
-import Positions from "./libs/Alpaca/Positions/Positions";
-import PortfolioHistory from "./libs/Alpaca/PortfolioHistory/PortfolioHistory";
-import Watchlists from "./libs/Alpaca/Watchlists/Watchlists";
-import AccountConfiguration from "./libs/Alpaca/AccountConfiguration/AccountConfiguration";
-import Clock from "./libs/Alpaca/Clock/Clock";
-import Calendar from "./libs/Alpaca/Calendar/Calendar";
-import CryptoFunding from "./libs/Alpaca/CryptoFunding/CryptoFunding";
+import Account from "./libs/AlpacaTradingAPI/Account/Account";
+import Assets from "./libs/AlpacaTradingAPI/Assets/Assets";
+import CorporateActions from "./libs/AlpacaTradingAPI/CorporateActions/CorporateActions";
+import Orders from "./libs/AlpacaTradingAPI/Order/Orders";
+import Positions from "./libs/AlpacaTradingAPI/Positions/Positions";
+import PortfolioHistory from "./libs/AlpacaTradingAPI/PortfolioHistory/PortfolioHistory";
+import Watchlists from "./libs/AlpacaTradingAPI/Watchlists/Watchlists";
+import AccountConfiguration from "./libs/AlpacaTradingAPI/AccountConfiguration/AccountConfiguration";
+import Clock from "./libs/AlpacaTradingAPI/Clock/Clock";
+import Calendar from "./libs/AlpacaTradingAPI/Calendar/Calendar";
+import CryptoFunding from "./libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding";
 
 class Alpaca {
   constructor(private readonly auth: Authentication) {

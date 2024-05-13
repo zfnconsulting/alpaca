@@ -3,17 +3,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Account_1 = __importDefault(require("./libs/Alpaca/Account/Account"));
-const Assets_1 = __importDefault(require("./libs/Alpaca/Assets/Assets"));
-const CorporateActions_1 = __importDefault(require("./libs/Alpaca/CorporateActions/CorporateActions"));
-const Orders_1 = __importDefault(require("./libs/Alpaca/Order/Orders"));
-const Positions_1 = __importDefault(require("./libs/Alpaca/Positions/Positions"));
-const PortfolioHistory_1 = __importDefault(require("./libs/Alpaca/PortfolioHistory/PortfolioHistory"));
-const Watchlists_1 = __importDefault(require("./libs/Alpaca/Watchlists/Watchlists"));
-const AccountConfiguration_1 = __importDefault(require("./libs/Alpaca/AccountConfiguration/AccountConfiguration"));
-const Clock_1 = __importDefault(require("./libs/Alpaca/Clock/Clock"));
-const Calendar_1 = __importDefault(require("./libs/Alpaca/Calendar/Calendar"));
-const CryptoFunding_1 = __importDefault(require("./libs/Alpaca/CryptoFunding/CryptoFunding"));
+const Account_1 = __importDefault(require("./libs/AlpacaTradingAPI/Account/Account"));
+const Assets_1 = __importDefault(require("./libs/AlpacaTradingAPI/Assets/Assets"));
+const CorporateActions_1 = __importDefault(require("./libs/AlpacaTradingAPI/CorporateActions/CorporateActions"));
+const Orders_1 = __importDefault(require("./libs/AlpacaTradingAPI/Order/Orders"));
+const Positions_1 = __importDefault(require("./libs/AlpacaTradingAPI/Positions/Positions"));
+const PortfolioHistory_1 = __importDefault(require("./libs/AlpacaTradingAPI/PortfolioHistory/PortfolioHistory"));
+const Watchlists_1 = __importDefault(require("./libs/AlpacaTradingAPI/Watchlists/Watchlists"));
+const AccountConfiguration_1 = __importDefault(require("./libs/AlpacaTradingAPI/AccountConfiguration/AccountConfiguration"));
+const Clock_1 = __importDefault(require("./libs/AlpacaTradingAPI/Clock/Clock"));
+const Calendar_1 = __importDefault(require("./libs/AlpacaTradingAPI/Calendar/Calendar"));
+const CryptoFunding_1 = __importDefault(require("./libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding"));
 class Alpaca {
     auth;
     constructor(auth) {
