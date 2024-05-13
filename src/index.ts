@@ -28,6 +28,12 @@ import {
   DeleteSymbolfromWatchlist,
   AccountConfigurations,
   GetMarketCalendarinfo,
+  GetRetrieveCryptoFundingWallets,
+  RequestNewWithdrawal,
+  GetRetrieveCryptoFundingTransfer,
+  RequestNewWhitelistedAddress,
+  DeleteWhitelistedAddress,
+  GetEstimatedGasFee,
 } from "./libs/TypescriptTypes/InputTypes";
 import Account from "./libs/Alpaca/Account/Account";
 import Assets from "./libs/Alpaca/Assets/Assets";
@@ -39,6 +45,7 @@ import Watchlists from "./libs/Alpaca/Watchlists/Watchlists";
 import AccountConfiguration from "./libs/Alpaca/AccountConfiguration/AccountConfiguration";
 import Clock from "./libs/Alpaca/Clock/Clock";
 import Calendar from "./libs/Alpaca/Calendar/Calendar";
+import CryptoFunding from "./libs/Alpaca/CryptoFunding/CryptoFunding";
 
 class Alpaca {
   constructor(private readonly auth: Authentication) {
@@ -151,6 +158,37 @@ class Alpaca {
   }
   clockAndCalendar(): Promise<object> {
     return new Clock(this.auth).getMarketClockInfo();
+  }
+  // CryptoFunding
+  getRetrieveCryptoFundingWallets(param: GetRetrieveCryptoFundingWallets) {
+    return new CryptoFunding(this.auth).getRetrieveCryptoFundingWallets(param);
+  }
+  getRetrieveCryptoFundingTransfer() {
+    return new CryptoFunding(this.auth).getRetrieveCryptoFundingTransfer();
+  }
+  requestNewWithdrawal(data: RequestNewWithdrawal) {
+    return new CryptoFunding(this.auth).requestNewWithdrawal(data);
+  }
+  getRetrieveSingleCryptoFundingTransfer(
+    queryParams: GetRetrieveCryptoFundingTransfer
+  ) {
+    return new CryptoFunding(this.auth).getRetrieveSingleCryptoFundingTransfer(
+      queryParams
+    );
+  }
+  getArrayofWhitelistedAddresses(queryParams: GetRetrieveCryptoFundingWallets) {
+    return new CryptoFunding(this.auth).getArrayofWhitelistedAddresses(
+      queryParams
+    );
+  }
+  requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress) {
+    return new CryptoFunding(this.auth).requestNewWhitelistedAddress(data);
+  }
+  deleteWhitelistedAddress(data: DeleteWhitelistedAddress) {
+    return new CryptoFunding(this.auth).deleteWhitelistedAddress(data);
+  }
+  getEstimatedGasFee(queryParams: GetEstimatedGasFee) {
+    return new CryptoFunding(this.auth).getEstimatedGasFee(queryParams);
   }
 }
 

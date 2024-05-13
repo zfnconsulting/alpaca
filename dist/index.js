@@ -13,6 +13,7 @@ const Watchlists_1 = __importDefault(require("./libs/Alpaca/Watchlists/Watchlist
 const AccountConfiguration_1 = __importDefault(require("./libs/Alpaca/AccountConfiguration/AccountConfiguration"));
 const Clock_1 = __importDefault(require("./libs/Alpaca/Clock/Clock"));
 const Calendar_1 = __importDefault(require("./libs/Alpaca/Calendar/Calendar"));
+const CryptoFunding_1 = __importDefault(require("./libs/Alpaca/CryptoFunding/CryptoFunding"));
 class Alpaca {
     auth;
     constructor(auth) {
@@ -121,6 +122,31 @@ class Alpaca {
     }
     clockAndCalendar() {
         return new Clock_1.default(this.auth).getMarketClockInfo();
+    }
+    // CryptoFunding
+    getRetrieveCryptoFundingWallets(param) {
+        return new CryptoFunding_1.default(this.auth).getRetrieveCryptoFundingWallets(param);
+    }
+    getRetrieveCryptoFundingTransfer() {
+        return new CryptoFunding_1.default(this.auth).getRetrieveCryptoFundingTransfer();
+    }
+    requestNewWithdrawal(data) {
+        return new CryptoFunding_1.default(this.auth).requestNewWithdrawal(data);
+    }
+    getRetrieveSingleCryptoFundingTransfer(queryParams) {
+        return new CryptoFunding_1.default(this.auth).getRetrieveSingleCryptoFundingTransfer(queryParams);
+    }
+    getArrayofWhitelistedAddresses(queryParams) {
+        return new CryptoFunding_1.default(this.auth).getArrayofWhitelistedAddresses(queryParams);
+    }
+    requestNewWhitelistedAddress(data) {
+        return new CryptoFunding_1.default(this.auth).requestNewWhitelistedAddress(data);
+    }
+    deleteWhitelistedAddress(data) {
+        return new CryptoFunding_1.default(this.auth).deleteWhitelistedAddress(data);
+    }
+    getEstimatedGasFee(queryParams) {
+        return new CryptoFunding_1.default(this.auth).getEstimatedGasFee(queryParams);
     }
 }
 exports.default = Alpaca;

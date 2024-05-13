@@ -1,4 +1,4 @@
-import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, GetMarketCalendarinfo } from "./libs/TypescriptTypes/InputTypes";
+import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, GetMarketCalendarinfo, GetRetrieveCryptoFundingWallets, RequestNewWithdrawal, GetRetrieveCryptoFundingTransfer, RequestNewWhitelistedAddress, DeleteWhitelistedAddress, GetEstimatedGasFee } from "./libs/TypescriptTypes/InputTypes";
 declare class Alpaca {
     private readonly auth;
     constructor(auth: Authentication);
@@ -36,5 +36,13 @@ declare class Alpaca {
     updateAccountConfigurations(data: AccountConfigurations): Promise<object>;
     getMarketCalendarinfo(param?: GetMarketCalendarinfo): Promise<object>;
     clockAndCalendar(): Promise<object>;
+    getRetrieveCryptoFundingWallets(param: GetRetrieveCryptoFundingWallets): Promise<any>;
+    getRetrieveCryptoFundingTransfer(): Promise<any>;
+    requestNewWithdrawal(data: RequestNewWithdrawal): Promise<any>;
+    getRetrieveSingleCryptoFundingTransfer(queryParams: GetRetrieveCryptoFundingTransfer): Promise<any>;
+    getArrayofWhitelistedAddresses(queryParams: GetRetrieveCryptoFundingWallets): Promise<any>;
+    requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress): Promise<any>;
+    deleteWhitelistedAddress(data: DeleteWhitelistedAddress): Promise<any>;
+    getEstimatedGasFee(queryParams: GetEstimatedGasFee): Promise<any>;
 }
 export default Alpaca;
