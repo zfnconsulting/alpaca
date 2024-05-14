@@ -14,6 +14,7 @@ const AccountConfiguration_1 = __importDefault(require("./libs/AlpacaTradingAPI/
 const Clock_1 = __importDefault(require("./libs/AlpacaTradingAPI/Clock/Clock"));
 const Calendar_1 = __importDefault(require("./libs/AlpacaTradingAPI/Calendar/Calendar"));
 const CryptoFunding_1 = __importDefault(require("./libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding"));
+const Stock_1 = __importDefault(require("./libs/MarketData/Stock/Stock"));
 class Alpaca {
     auth;
     constructor(auth) {
@@ -77,7 +78,6 @@ class Alpaca {
     getPortfolioHistory(param) {
         return new PortfolioHistory_1.default(this.auth).getAccountPortfolioHistory(param);
     }
-    // Watchlists
     getAllWatchlists() {
         return new Watchlists_1.default(this.auth).getAllWatchlists();
     }
@@ -147,6 +147,60 @@ class Alpaca {
     }
     getEstimatedGasFee(queryParams) {
         return new CryptoFunding_1.default(this.auth).getEstimatedGasFee(queryParams);
+    }
+    getHistoricalCryptoFunding(queryParams) {
+        return new Stock_1.default(this.auth).getHistoricalAuctions(queryParams);
+    }
+    getHistoricalBars(queryParams) {
+        return new Stock_1.default(this.auth).getHistoricalBars(queryParams);
+    }
+    getLatestBars(queryParams) {
+        return new Stock_1.default(this.auth).getLatestBars(queryParams);
+    }
+    getConditionCodes(queryParams) {
+        return new Stock_1.default(this.auth).getConditionCodes(queryParams);
+    }
+    getExchangeCodes() {
+        return new Stock_1.default(this.auth).getExchangeCodes();
+    }
+    getHistoricalQuotes(param) {
+        return new Stock_1.default(this.auth).getHistoricalQuotes(param);
+    }
+    getLatestQuotes(param) {
+        return new Stock_1.default(this.auth).getLatestQuotes(param);
+    }
+    getSnapshots(param) {
+        return new Stock_1.default(this.auth).getSnapshots(param);
+    }
+    getHistoricalTrades(param) {
+        return new Stock_1.default(this.auth).getHistoricalTrades(param);
+    }
+    getLatestTrades(param) {
+        return new Stock_1.default(this.auth).getLatestTrades(param);
+    }
+    getHistoricalAuctionsSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getHistoricalAuctionsSingleSymbol(param);
+    }
+    getHistoricalBarsSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getHistoricalBarsSingleSymbol(param);
+    }
+    getLatestBarSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getLatestBarSingleSymbol(param);
+    }
+    getHistoricalQuotesSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getHistoricalQuotesSingleSymbol(param);
+    }
+    getLatestQuoteSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getLatestQuoteSingleSymbol(param);
+    }
+    getSnapshotSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getSnapshotSingleSymbol(param);
+    }
+    getHistoricalTradesSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getHistoricalTradesSingleSymbol(param);
+    }
+    getLatestTradeSingleSymbol(param) {
+        return new Stock_1.default(this.auth).getLatestTradeSingleSymbol(param);
     }
 }
 exports.default = Alpaca;

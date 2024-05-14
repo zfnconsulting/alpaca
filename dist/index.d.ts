@@ -1,4 +1,5 @@
 import { Authentication, GetAssetsParams, GetAnAssetByIDorSymbol, GetOptionContracts, GetOptionContractByIDorSymbol, GetAnnouncements, CreateAnOrder, GetAllOrders, GetOrderById, ReplaceOrderbyID, DeleteOrderbyID, CloseAllPositions, GetOpenPosition, ClosePosition, ExerciseOptionPosition, GetAccountPortfolioHistory, CreateWatchlist, GetWatchlistbyID, UpdateWatchlistById, AddAssettoWatchlist, DeleteWatchlistById, GetWatchlistbyName, UpdateWatchlistByName, AddAssettoWatchlistByName, DeleteWatchlistByName, DeleteSymbolfromWatchlist, AccountConfigurations, GetMarketCalendarinfo, GetRetrieveCryptoFundingWallets, RequestNewWithdrawal, GetRetrieveCryptoFundingTransfer, RequestNewWhitelistedAddress, DeleteWhitelistedAddress, GetEstimatedGasFee } from "./libs/TypescriptTypes/TradingAPI";
+import { GetHistoricalAuctions, GetHistoricalBars, GetLatestBars, GetConditionCodes, GetHistoricalQuotes, GetLatestQuotes, GetSnapshots, GetHistoricalTrades, GetLatestTrades, GetHistoricalAuctionsSingleSymbol, GetHistoricalBarsSingleSymbol, GetLatestBarSingleSymbol, GetHistoricalQuotesSingleSymbol, GetLatestQuoteSingleSymbol, GetSnapshotSingleSymbol, GetHistoricalTradesSingleSymbol, GetLatestTradeSingleSymbol } from "./libs/TypescriptTypes/MarketAPI/StockPhaseTypes";
 declare class Alpaca {
     private readonly auth;
     constructor(auth: Authentication);
@@ -44,5 +45,23 @@ declare class Alpaca {
     requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress): Promise<any>;
     deleteWhitelistedAddress(data: DeleteWhitelistedAddress): Promise<any>;
     getEstimatedGasFee(queryParams: GetEstimatedGasFee): Promise<any>;
+    getHistoricalCryptoFunding(queryParams: GetHistoricalAuctions): Promise<object>;
+    getHistoricalBars(queryParams: GetHistoricalBars): Promise<object>;
+    getLatestBars(queryParams: GetLatestBars): Promise<object>;
+    getConditionCodes(queryParams: GetConditionCodes): Promise<object>;
+    getExchangeCodes(): Promise<object>;
+    getHistoricalQuotes(param: GetHistoricalQuotes): Promise<object>;
+    getLatestQuotes(param: GetLatestQuotes): Promise<object>;
+    getSnapshots(param: GetSnapshots): Promise<object>;
+    getHistoricalTrades(param: GetHistoricalTrades): Promise<object>;
+    getLatestTrades(param: GetLatestTrades): Promise<object>;
+    getHistoricalAuctionsSingleSymbol(param: GetHistoricalAuctionsSingleSymbol): Promise<object>;
+    getHistoricalBarsSingleSymbol(param: GetHistoricalBarsSingleSymbol): Promise<object>;
+    getLatestBarSingleSymbol(param: GetLatestBarSingleSymbol): Promise<object>;
+    getHistoricalQuotesSingleSymbol(param: GetHistoricalQuotesSingleSymbol): Promise<any>;
+    getLatestQuoteSingleSymbol(param: GetLatestQuoteSingleSymbol): Promise<object>;
+    getSnapshotSingleSymbol(param: GetSnapshotSingleSymbol): Promise<object>;
+    getHistoricalTradesSingleSymbol(param: GetHistoricalTradesSingleSymbol): Promise<object>;
+    getLatestTradeSingleSymbol(param: GetLatestTradeSingleSymbol): Promise<object>;
 }
 export default Alpaca;
