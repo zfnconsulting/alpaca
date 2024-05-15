@@ -98,3 +98,9 @@ export const queryParams = {
   start: "2021-03-16T18:38:01Z",
   end: "2021-03-16T18:38:01Z",
 };
+
+export const getWatchlistbyID_input = {
+  watchlist_id: "1",
+  name: "test",
+  symbols: ["AAPL"],
+};

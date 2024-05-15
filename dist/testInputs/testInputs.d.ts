@@ -73,3 +73,8 @@ export declare const queryParams: {
     start: string;
     end: string;
 };
+export declare const getWatchlistbyID_input: {
+    watchlist_id: string;
+    name: string;
+    symbols: string[];
+};

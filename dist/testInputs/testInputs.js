@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.queryParams = exports.getWatchlistbyNameInput = exports.addAssettoWatchlistInput = exports.updateWatchlistById_input = exports.createWatchlist_input = exports.deleteOrderbyID_input = exports.replaceOrderbyID_input = exports.getOrderById_input = exports.deleteAllOrders_input = exports.getAllOrders_input = exports.createAnOrder_input = exports.getSpecificAnnouncement_input = exports.getAnnouncements_input = exports.getOptionContractByIDorSymbol_input = exports.getOptionContracts_input = exports.getAssets_input = exports.getAnAssetByIDorSymbol_input = void 0;
+exports.getWatchlistbyID_input = exports.queryParams = exports.getWatchlistbyNameInput = exports.addAssettoWatchlistInput = exports.updateWatchlistById_input = exports.createWatchlist_input = exports.deleteOrderbyID_input = exports.replaceOrderbyID_input = exports.getOrderById_input = exports.deleteAllOrders_input = exports.getAllOrders_input = exports.createAnOrder_input = exports.getSpecificAnnouncement_input = exports.getAnnouncements_input = exports.getOptionContractByIDorSymbol_input = exports.getOptionContracts_input = exports.getAssets_input = exports.getAnAssetByIDorSymbol_input = void 0;
 const date_fns_1 = require("date-fns");
 exports.getAnAssetByIDorSymbol_input = { symbol_or_asset_id: "AAPL" };
 exports.getAssets_input = null;
@@ -92,4 +92,9 @@ exports.queryParams = {
     pnl_reset: "per_day",
     start: "2021-03-16T18:38:01Z",
     end: "2021-03-16T18:38:01Z",
+};
+exports.getWatchlistbyID_input = {
+    watchlist_id: "1",
+    name: "test",
+    symbols: ["AAPL"],
 };

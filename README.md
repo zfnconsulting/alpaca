@@ -19,7 +19,7 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
 - [Usage](#Installation-And-Usage)
 - [Constructor](#constructor)
 - [Methods](#methods)
-  - [getAccount()](#getaccount-promisegetaccount)
+  - [getAccount()](#alpacagetaccount)
   - [getAssets(params?: GetAssetsParams)](#getassetsparams-getassetsparams-promiseobject)
   - [getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol)](#getanassetbyidorSymbolparams-getanassetbyidorSymbol-promiseobject)
   - [getOptionContracts(param?: GetOptionContracts)](#getoptioncontractsparam-getoptioncontracts-promiseobject)
