@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   Authentication,
   GetAssetsParams,
@@ -35,6 +34,25 @@ import {
   DeleteWhitelistedAddress,
   GetEstimatedGasFee,
 } from "./libs/TypescriptTypes/TradingAPI";
+import {
+  GetHistoricalAuctions,
+  GetHistoricalBars,
+  GetLatestBars,
+  GetConditionCodes,
+  GetHistoricalQuotes,
+  GetLatestQuotes,
+  GetSnapshots,
+  GetHistoricalTrades,
+  GetLatestTrades,
+  GetHistoricalAuctionsSingleSymbol,
+  GetHistoricalBarsSingleSymbol,
+  GetLatestBarSingleSymbol,
+  GetHistoricalQuotesSingleSymbol,
+  GetLatestQuoteSingleSymbol,
+  GetSnapshotSingleSymbol,
+  GetHistoricalTradesSingleSymbol,
+  GetLatestTradeSingleSymbol,
+} from "./libs/TypescriptTypes/MarketAPI/StockPhaseTypes";
 import Account from "./libs/AlpacaTradingAPI/Account/Account";
 import Assets from "./libs/AlpacaTradingAPI/Assets/Assets";
 import CorporateActions from "./libs/AlpacaTradingAPI/CorporateActions/CorporateActions";
@@ -46,7 +64,7 @@ import AccountConfiguration from "./libs/AlpacaTradingAPI/AccountConfiguration/A
 import Clock from "./libs/AlpacaTradingAPI/Clock/Clock";
 import Calendar from "./libs/AlpacaTradingAPI/Calendar/Calendar";
 import CryptoFunding from "./libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding";
-
+import Stock from "./libs/MarketData/Stock/Stock";
 class Alpaca {
   constructor(private readonly auth: Authentication) {
     this.auth = auth;
@@ -110,8 +128,6 @@ class Alpaca {
   getPortfolioHistory(param: GetAccountPortfolioHistory) {
     return new PortfolioHistory(this.auth).getAccountPortfolioHistory(param);
   }
-
-  // Watchlists
   getAllWatchlists(): Promise<object> {
     return new Watchlists(this.auth).getAllWatchlists();
   }
@@ -189,6 +205,62 @@ class Alpaca {
   }
   getEstimatedGasFee(queryParams: GetEstimatedGasFee) {
     return new CryptoFunding(this.auth).getEstimatedGasFee(queryParams);
+  }
+
+  getHistoricalCryptoFunding(queryParams: GetHistoricalAuctions) {
+    return new Stock(this.auth).getHistoricalAuctions(queryParams);
+  }
+  getHistoricalBars(queryParams: GetHistoricalBars) {
+    return new Stock(this.auth).getHistoricalBars(queryParams);
+  }
+  getLatestBars(queryParams: GetLatestBars) {
+    return new Stock(this.auth).getLatestBars(queryParams);
+  }
+  getConditionCodes(queryParams: GetConditionCodes) {
+    return new Stock(this.auth).getConditionCodes(queryParams);
+  }
+
+  getExchangeCodes() {
+    return new Stock(this.auth).getExchangeCodes();
+  }
+  getHistoricalQuotes(param: GetHistoricalQuotes) {
+    return new Stock(this.auth).getHistoricalQuotes(param);
+  }
+  getLatestQuotes(param: GetLatestQuotes) {
+    return new Stock(this.auth).getLatestQuotes(param);
+  }
+  getSnapshots(param: GetSnapshots) {
+    return new Stock(this.auth).getSnapshots(param);
+  }
+  getHistoricalTrades(param: GetHistoricalTrades) {
+    return new Stock(this.auth).getHistoricalTrades(param);
+  }
+  getLatestTrades(param: GetLatestTrades) {
+    return new Stock(this.auth).getLatestTrades(param);
+  }
+  getHistoricalAuctionsSingleSymbol(param: GetHistoricalAuctionsSingleSymbol) {
+    return new Stock(this.auth).getHistoricalAuctionsSingleSymbol(param);
+  }
+  getHistoricalBarsSingleSymbol(param: GetHistoricalBarsSingleSymbol) {
+    return new Stock(this.auth).getHistoricalBarsSingleSymbol(param);
+  }
+  getLatestBarSingleSymbol(param: GetLatestBarSingleSymbol) {
+    return new Stock(this.auth).getLatestBarSingleSymbol(param);
+  }
+  getHistoricalQuotesSingleSymbol(param: GetHistoricalQuotesSingleSymbol) {
+    return new Stock(this.auth).getHistoricalQuotesSingleSymbol(param);
+  }
+  getLatestQuoteSingleSymbol(param: GetLatestQuoteSingleSymbol) {
+    return new Stock(this.auth).getLatestQuoteSingleSymbol(param);
+  }
+  getSnapshotSingleSymbol(param: GetSnapshotSingleSymbol) {
+    return new Stock(this.auth).getSnapshotSingleSymbol(param);
+  }
+  getHistoricalTradesSingleSymbol(param: GetHistoricalTradesSingleSymbol) {
+    return new Stock(this.auth).getHistoricalTradesSingleSymbol(param);
+  }
+  getLatestTradeSingleSymbol(param: GetLatestTradeSingleSymbol) {
+    return new Stock(this.auth).getLatestTradeSingleSymbol(param);
   }
 }
 

@@ -61,6 +61,23 @@ The REST API documentation can be found in https://docs.alpaca.markets. For deta
   - [requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress)](#requestnewwhitelistedaddressdata-requestnewwhitelistedaddress)
   - [deleteWhitelistedAddress(data: DeleteWhitelistedAddress)](#deletewhitelistedaddressdata-deletewhitelistedaddress)
   - [getEstimatedGasFee(queryParams: GetEstimatedGasFee)](#getestimatedgasfeequeryparams-getestimatedgasfee)
+  - [getHistoricalCryptoFunding(queryParams: GetHistoricalAuctions)](#gethistoricalcryptofundingqueryparams-gethistoricalauctions)
+  - [getHistoricalBars(queryParams: GetHistoricalBars)](#gethistoricalbarsqueryparams-gethistoricalbars)
+  - [getLatestBars(queryParams: GetLatestBars)](#getlatestbarsqueryparams-getlatestbars)
+  - [getConditionCodes(queryParams: GetConditionCodes)](#getconditioncodesqueryparams-getconditioncodes)
+  - [getHistoricalQuotes(param: GetHistoricalQuotes)](#gethistoricalquotesparam-gethistoricalquotes)
+  - [getLatestQuotes(param: GetLatestQuotes)](#getlatestquotesparam-getlatestquotes)
+  - [getSnapshots(param: GetSnapshots)](#getsnapshotsparam-getsnapshots)
+  - [getHistoricalTrades(param: GetHistoricalTrades)](#gethistoricaltradesparam-gethistoricaltrades)
+  - [getLatestTrades(param: GetLatestTrades)](#getlatesttradesparam-getlatesttrades)
+  - [getHistoricalAuctionsSingleSymbol(param: GetHistoricalAuctionsSingleSymbol)](#gethistoricalauctionssinglesymbolparam-gethistoricalauctionssinglesymbol)
+  - [getHistoricalBarsSingleSymbol(param: GetHistoricalBarsSingleSymbol)](#gethistoricalbarssinglesymbolparam-gethistoricalbarssinglesymbol)
+  - [getLatestBarSingleSymbol(param: GetLatestBarSingleSymbol)](#getlatestbarsinglesymbolparam-getlatestbarsinglesymbol)
+  - [getHistoricalQuotesSingleSymbol(param: GetHistoricalQuotesSingleSymbol)](#gethistoricalquotessinglesymbolparam-gethistoricalquotessinglesymbol)
+  - [getLatestQuoteSingleSymbol(param: GetLatestQuoteSingleSymbol)](#getlatestquotesinglesymbolparam-getlatestquotessinglesymbol)
+  - [getSnapshotSingleSymbol(param: GetSnapshotSingleSymbol)](#getsnapshotsinglesymbolparam-getsnapshotsinglesymbol)
+  - [getHistoricalTradesSingleSymbol(param: GetHistoricalTradesSingleSymbol)](#gethistoricaltradessinglesymbolparam-gethistoricaltradessinglesymbol)
+  - [getLatestTradeSingleSymbol(param: GetLatestTradeSingleSymbol)](#getlatesttradesinglesymbolparam-getlatesttradesinglesymbol)
 
 ## Installation And Usage
 
@@ -411,3 +428,146 @@ Retrieves the estimated gas fee for a crypto transaction.
   - `from_address` (optional): A string representing the sender's address.
   - `to_address` (optional): A string representing the recipient's address.
   - `amount` (optional): A string representing the amount of crypto for the transaction.
+
+### `getHistoricalCryptoFunding(queryParams: GetHistoricalAuctions)`
+
+Retrieves historical data for crypto funding.
+
+- `queryParams`: An object containing parameters for the historical crypto funding request.
+  - `symbol`: A string representing the symbol for which to retrieve historical data.
+  - `start` (optional): A string representing the start date/time for the data range.
+  - `end` (optional): A string representing the end date/time for the data range.
+  - `limit` (optional): A number representing the maximum number of results to return.
+  - `asof` (optional): A string representing the timestamp of the request.
+  - `feed` (optional): A string representing the data feed source (e.g., iex, sip, otc).
+  - `currency` (optional): A string representing the currency for the data.
+  - `page_token` (optional): A string representing the page token for paginated results.
+  - `sort` (optional): A string representing the sort order (asc, desc).
+
+### `getHistoricalBars(queryParams: GetHistoricalBars)`
+
+Retrieves historical bar data.
+
+- `queryParams`: An object containing parameters for the historical bar data request.
+  - `symbol`: A string representing the symbol for which to retrieve historical data.
+  - `timeframe`: A string representing the timeframe for the data (e.g., 1Min, 5Min, 1H).
+  - `start` (optional): A string representing the start date/time for the data range.
+  - `end` (optional): A string representing the end date/time for the data range.
+  - `limit` (optional): A number representing the maximum number of results to return.
+  - `adjustment` (optional): A string representing the adjustment type for the data (e.g., raw, split, dividend).
+  - `asof` (optional): A string representing the timestamp of the request.
+  - `feed` (optional): A string representing the data feed source (e.g., iex, sip, otc).
+  - `currency` (optional): A string representing the currency for the data.
+  - `page_token` (optional): A string representing the page token for paginated results.
+  - `sort` (optional): A string representing the sort order (asc, desc).
+
+### `getLatestBars(queryParams: GetLatestBars)`
+
+Retrieves the latest bar data.
+
+- `queryParams`: An object containing parameters for the latest bar data request.
+  - `symbol`: A string representing the symbol for which to retrieve the latest bar data.
+  - `feed` (optional): A string representing the data feed source (e.g., iex, sip, otc).
+  - `currency` (optional): A string representing the currency for the data.
+
+### `getConditionCodes(queryParams: GetConditionCodes)`
+
+Retrieves condition codes for a given tick type and tape.
+
+- `queryParams`: An object containing parameters for the condition codes request.
+  - `ticktype`: A string representing the tick type for which to retrieve condition codes.
+  - `tape`: A string representing the tape for which to retrieve condition codes.
+
+### `getHistoricalQuotes(param: GetHistoricalQuotes)`
+
+Retrieves historical quote data.
+
+- `param`: An object containing parameters for the historical quote data request.
+  - `symbol`: A string representing the symbol for which to retrieve historical data.
+  - Additional optional parameters:
+    - `start`: A string representing the start date/time for the data range.
+    - `end`: A string representing the end date/time for the data range.
+    - `limit`: A number representing the maximum number of results to return.
+    - `asof`: A string representing the timestamp of the request.
+    - `feed`: A string representing the data feed source (e.g., iex, sip, otc).
+    - `currency`: A string representing the currency for the data.
+    - `page_token`: A string representing the page token for paginated results.
+    - `sort`: A string representing the sort order (asc, desc).
+
+### `getLatestQuotes(param: GetLatestQuotes)`
+
+Retrieves the latest quote data.
+
+- `param`: An object containing parameters for the latest quote data request.
+  - `symbol`: A string representing the symbol for which to retrieve the latest quote data.
+  - Additional optional parameters:
+    - `feed`: A string representing the data feed source (e.g., iex, sip, otc).
+    - `currency`: A string representing the currency for the data.
+
+### `getSnapshots(param: GetSnapshots)`
+
+Retrieves snapshots.
+
+- `param`: An object containing parameters for the snapshots request.
+  - `symbol`: A string or an array of strings representing the symbol(s) for which to retrieve snapshots.
+  - Additional optional parameters:
+    - `feed`: A string representing the data feed source (e.g., iex, sip, otc).
+    - `currency`: A string representing the currency for the data.
+
+### `getHistoricalTrades(param: GetHistoricalTrades)`
+
+Retrieves historical trade data.
+
+- `param`: An object containing parameters for the historical trade data request.
+  - `symbol`: A string representing the symbol for which to retrieve historical data.
+  - Additional optional parameters:
+    - `start`: A string representing the start date/time for the data range.
+    - `end`: A string representing the end date/time for the data range.
+    - `limit`: A number representing the maximum number of results to return.
+    - `asof`: A string representing the timestamp of the request.
+    - `feed`: A string representing the data feed source (e.g., iex, sip, otc).
+    - `currency`: A string representing the currency for the data.
+    - `page_token`: A string representing the page token for paginated results.
+    - `sort`: A string representing the sort order (asc, desc).
+
+### `getLatestTrades(param: GetLatestTrades)`
+
+Retrieves the latest trade data.
+
+- `param`: An object containing parameters for the latest trade data request.
+  - `symbol`: A string representing the symbol for which to retrieve the latest trade data.
+  - Additional optional parameters:
+    - `feed`: A string representing the data feed source (e.g., iex, sip, otc).
+    - `currency`: A string representing the currency for the data.
+
+### `getHistoricalAuctionsSingleSymbol(param: GetHistoricalAuctionsSingleSymbol)`
+
+Retrieves historical auction data for a single symbol.
+
+### `getHistoricalBarsSingleSymbol(param: GetHistoricalBarsSingleSymbol)`
+
+Retrieves historical bar data for a single symbol.
+
+### `getLatestBarSingleSymbol(param: GetLatestBarSingleSymbol)`
+
+Retrieves the latest bar data for a single symbol.
+
+### `getHistoricalQuotesSingleSymbol(param: GetHistoricalQuotesSingleSymbol)`
+
+Retrieves historical quote data for a single symbol.
+
+### `getLatestQuoteSingleSymbol(param: GetLatestQuoteSingleSymbol)`
+
+Retrieves the latest quote data for a single symbol.
+
+### `getSnapshotSingleSymbol(param: GetSnapshotSingleSymbol)`
+
+Retrieves a snapshot for a single symbol.
+
+### `getHistoricalTradesSingleSymbol(param: GetHistoricalTradesSingleSymbol)`
+
+Retrieves historical trade data for a single symbol.
+
+### `getLatestTradeSingleSymbol(param: GetLatestTradeSingleSymbol)`
+
+Retrieves the latest trade data for a single symbol.
