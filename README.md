@@ -12,27 +12,27 @@ The Alpaca Trading API provides a comprehensive set of endpoints for managing tr
 
 ## API Documentation
 
-The REST API documentation can be found in https://docs.alpaca.markets. For detailed information about an endpoint, please consult the REST API docs. Documentation specific to this library can be found below.
+The REST API documentation can be found in https://docs.markets. For detailed information about an endpoint, please consult the REST API docs. Documentation specific to this library can be found below.
 
 ## Table of Contents
 
 - [Usage](#Installation-And-Usage)
 - [Constructor](#constructor)
 - [Methods](#methods)
-  - [getAccount()](#alpacagetaccount)
-  - [getAssets(params?: GetAssetsParams)](#alpacagetassetsparams-getassetsparams)
-  - [getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol)](#alpacagetanassetbyidorsymbolparam-getanassetbyidorsymbol)
-  - [getOptionContracts(param?: GetOptionContracts)](#alpacagetoptioncontractsparam-getoptioncontracts)
-  - [getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol)](#alpacagetoptioncontractbyidorsymbolparam-getoptioncontractbyidorsymbol)
-  - [getSpecificAnnouncement(id: string)](#alpacagetspecificannouncementid-string)
-  - [getAnnouncements(param: GetAnnouncements)](#alpaca.getannouncementsparam-getannouncements-promiseobject)
-  - [createAnOrder(param: CreateAnOrder)](#alpaca.createanorderparam-createanorder-promiseobject)
-  - [getAllOrders(param: GetAllOrders)](#alpaca.getallordersparam-getallorders-promiseobject)
-  - [deleteAllOrders()](#alpaca.deleteallorders-promiseobject)
-  - [getOrderById(param: GetOrderById)](#alpaca.getorderbyidparam-getorderbyid-promiseobject)
-  - [replaceOrderbyID(param: ReplaceOrderbyID)](#alpaca.replaceorderbyidparam-replaceorderbyid-promiseobject)
-  - [deleteOrderbyID(param: DeleteOrderbyID)](#alpaca.deleteorderbyidparam-deleteorderbyid-promiseobject)
-  - [getAllOpenPositions()](#alpaca.getallopenpositions-promiseobject)
+  - [getAccount()](#getaccount)
+  - [getAssets(params?: GetAssetsParams)](#getassetsparams-getassetsparams)
+  - [getAnAssetByIDorSymbol(params: GetAnAssetByIDorSymbol)](#getanassetbyidorsymbolparam-getanassetbyidorsymbol)
+  - [getOptionContracts(param?: GetOptionContracts)](#getoptioncontractsparam-getoptioncontracts)
+  - [getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol)](#getoptioncontractbyidorsymbolparam-getoptioncontractbyidorsymbol)
+  - [getSpecificAnnouncement(id: string)](#getspecificannouncementid-string)
+  - [getAnnouncements(param: GetAnnouncements)](#getannouncementsparam-getannouncements-promiseobject)
+  - [createAnOrder(param: CreateAnOrder)](#createanorderparam-createanorder-promiseobject)
+  - [getAllOrders(param: GetAllOrders)](#getallordersparam-getallorders-promiseobject)
+  - [deleteAllOrders()](#deleteallorders-promiseobject)
+  - [getOrderById(param: GetOrderById)](#getorderbyidparam-getorderbyid-promiseobject)
+  - [replaceOrderbyID(param: ReplaceOrderbyID)](#replaceorderbyidparam-replaceorderbyid-promiseobject)
+  - [deleteOrderbyID(param: DeleteOrderbyID)](#deleteorderbyidparam-deleteorderbyid-promiseobject)
+  - [getAllOpenPositions()](#getallopenpositions-promiseobject)
   - [closeAllPositions(param: CloseAllPositions)](#closeallpositionsparam-closeallpositions-promiseobject)
   - [getOpenPosition(param: GetOpenPosition)](#getopenpositionparam-getopenposition-promiseobject)
   - [closePosition(param: ClosePosition)](#closepositionparam-closeposition-promiseobject)
@@ -99,7 +99,7 @@ import Alpaca from "@zufans/alpaca";
 
 ## Constructor
 
-### `alpaca.constructor(auth: Authentication)`
+### `constructor(auth: Authentication)`
 
 ```js
 const alpaca = new Alpaca({
@@ -118,11 +118,11 @@ Initializes the Alpaca class with the provided authentication credentials.
 
 ## Methods
 
-### `alpaca.getAccount()`
+### `getAccount()`
 
 Retrieves information about the account associated with the provided authentication credentials.
 
-### `alpaca.getAssets(params?: GetAssetsParams)`
+### `getAssets(params?: GetAssetsParams)`
 
 Retrieves a list of assets available for trading on the Alpaca platform.
 
@@ -132,33 +132,33 @@ Retrieves a list of assets available for trading on the Alpaca platform.
   - `exchange`: A string representing the exchange where the asset is traded.
   - `attributes`: A string representing additional attributes to include in the response.
 
-### `alpaca.getAnAssetByIDorSymbol(param: GetAnAssetByIDorSymbol)`
+### `getAnAssetByIDorSymbol(param: GetAnAssetByIDorSymbol)`
 
 Retrieves information about a specific asset identified by its ID or symbol.
 
 - `param`: An object containing either the ID or symbol of the asset to retrieve.
   - `symbol_or_asset_id`: A string representing either the asset ID or symbol.
 
-### `alpaca.getOptionContracts(param?: GetOptionContracts)`
+### `getOptionContracts(param?: GetOptionContracts)`
 
 Retrieves a list of option contracts available for trading.
 
 - `param` (optional): An object containing optional parameters for filtering option contracts.
 
-### `alpaca.getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol)`
+### `getOptionContractByIDorSymbol(param: GetOptionContractByIDorSymbol)`
 
 Retrieves information about a specific option contract identified by its ID or symbol.
 
 - `param`: An object containing either the ID or symbol of the option contract to retrieve.
   - `symbol_or_asset_id`: A string representing either the option contract ID or symbol.
 
-### `alpaca.getSpecificAnnouncement(id: string)`
+### `getSpecificAnnouncement(id: string)`
 
 Retrieves information about a specific corporate announcement.
 
 - `id`: A string representing the ID of the announcement to retrieve.
 
-### `alpaca.getAnnouncements(param: GetAnnouncements)`
+### `getAnnouncements(param: GetAnnouncements)`
 
 Retrieves a list of corporate announcements.
 
@@ -170,39 +170,39 @@ Retrieves a list of corporate announcements.
   - `cusip` (optional): A string representing the CUSIP of the asset associated with the announcements.
   - `date_type` (optional): A string representing the date type for filtering announcements.
 
-### `alpaca.createAnOrder(param: CreateAnOrder)`
+### `createAnOrder(param: CreateAnOrder)`
 
 Creates a new order for trading.
 
 - `param`: An object containing parameters for creating the order.
   - See method signature for details.
 
-### `alpaca.getAllOrders(param: GetAllOrders)`
+### `getAllOrders(param: GetAllOrders)`
 
 Retrieves a list of all orders associated with the account.
 
 - `param`: An object containing optional parameters for filtering orders.
   - See method signature for details.
 
-### `alpaca.deleteAllOrders()`
+### `deleteAllOrders()`
 
 Deletes all open orders associated with the account.
 
-### `alpaca.getOrderById(param: GetOrderById)`
+### `getOrderById(param: GetOrderById)`
 
 Retrieves information about a specific order identified by its ID.
 
 - `param`: An object containing the ID of the order to retrieve.
   - `order_id`: A string representing the ID of the order.
 
-### `alpaca.replaceOrderbyID(param: ReplaceOrderbyID)`
+### `replaceOrderbyID(param: ReplaceOrderbyID)`
 
 Replaces an existing order with new parameters.
 
 - `param`: An object containing parameters for replacing the order.
   - See method signature for details.
 
-### `alpaca.deleteOrderbyID(param: DeleteOrderbyID)`
+### `deleteOrderbyID(param: DeleteOrderbyID)`
 
 Deletes a specific order identified by its ID.
 
