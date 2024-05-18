@@ -78,3 +78,6 @@ export declare const getWatchlistbyID_input: {
     name: string;
     symbols: string[];
 };
+export declare const getHistoricalAuctionsInput: {
+    symbols: string;
+};

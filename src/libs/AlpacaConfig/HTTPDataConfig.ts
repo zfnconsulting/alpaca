@@ -8,9 +8,7 @@ class HTTPDataConfig {
     this.auth = auth;
   }
   httpRequestConfig(config: AxiosParmConfig) {
-    const baseURL = this.auth["paper"]
-      ? "https://data.sandbox.alpaca.markets/"
-      : "https://data.alpaca.markets/";
+    const baseURL = "https://data.alpaca.markets/";
     const configuration: AxiosConfigurationObject = {
       method: config.method,
       baseURL: baseURL + config.version,

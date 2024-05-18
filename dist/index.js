@@ -148,7 +148,7 @@ class Alpaca {
     getEstimatedGasFee(queryParams) {
         return new CryptoFunding_1.default(this.auth).getEstimatedGasFee(queryParams);
     }
-    getHistoricalCryptoFunding(queryParams) {
+    getHistoricalAuctions(queryParams) {
         return new Stock_1.default(this.auth).getHistoricalAuctions(queryParams);
     }
     getHistoricalBars(queryParams) {

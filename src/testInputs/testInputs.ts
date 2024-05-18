@@ -104,3 +104,15 @@ export const getWatchlistbyID_input = {
   name: "test",
   symbols: ["AAPL"],
 };
+
+export const getHistoricalAuctionsInput = {
+  symbols: "AAPL",
+  // timeframe: "1Min",
+  //   start: "2024-05-16T00:00:00Z",
+  //   end: "2024-05-17T00:00:00Z",
+  //   limit: 1000,
+  //   feed: "sip",
+  //   adjustment: "all",
+  // page_token: "",
+  //   sort: "asc",
+};
