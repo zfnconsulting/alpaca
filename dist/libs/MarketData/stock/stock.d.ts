@@ -1,6 +1,6 @@
-import AlpacaConfig from "../../AlpacaConfig/AlpacaConfig";
+import AlpacaDataConfig from "../../AlpacaConfig/AlpacaDataConfig";
 import { GetHistoricalAuctions, GetHistoricalBars, GetLatestBars, GetConditionCodes, GetHistoricalQuotes, GetLatestQuotes, GetSnapshots, GetHistoricalTrades, GetLatestTrades, GetHistoricalAuctionsSingleSymbol, GetHistoricalBarsSingleSymbol, GetLatestBarSingleSymbol, GetHistoricalQuotesSingleSymbol, GetLatestQuoteSingleSymbol, GetSnapshotSingleSymbol, GetHistoricalTradesSingleSymbol, GetLatestTradeSingleSymbol } from "../../TypescriptTypes/MarketAPI/StockPhaseTypes";
-declare class Stock extends AlpacaConfig {
+declare class Stock extends AlpacaDataConfig {
     getHistoricalAuctions(param: GetHistoricalAuctions): Promise<object>;
     getHistoricalBars(param: GetHistoricalBars): Promise<object>;
     getLatestBars(param: GetLatestBars): Promise<object>;

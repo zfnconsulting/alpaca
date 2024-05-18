@@ -1,5 +1,5 @@
 import { l } from "@zufan_devops/console";
-import AlpacaConfig from "../../AlpacaConfig/AlpacaConfig";
+import AlpacaDataConfig from "../../AlpacaConfig/AlpacaDataConfig";
 import {
   GetHistoricalAuctions,
   GetHistoricalBars,
@@ -21,7 +21,7 @@ import {
 } from "../../TypescriptTypes/MarketAPI/StockPhaseTypes";
 import axios from "axios";
 
-class Stock extends AlpacaConfig {
+class Stock extends AlpacaDataConfig {
   getHistoricalAuctions(param: GetHistoricalAuctions): Promise<object> {
     try {
       return axios
