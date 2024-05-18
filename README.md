@@ -16,10 +16,6 @@ The REST API documentation can be found in https://docs.markets. For detailed in
 
 ## Table of Contents
 
-## Table of Contents
-
-## Table of Contents
-
 - [Usage](#installation-and-usage)
 - [Constructor](#constructor)
 - [Methods](#methods)

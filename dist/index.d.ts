@@ -45,7 +45,7 @@ declare class Alpaca {
     requestNewWhitelistedAddress(data: RequestNewWhitelistedAddress): Promise<any>;
     deleteWhitelistedAddress(data: DeleteWhitelistedAddress): Promise<any>;
     getEstimatedGasFee(queryParams: GetEstimatedGasFee): Promise<any>;
-    getHistoricalCryptoFunding(queryParams: GetHistoricalAuctions): Promise<object>;
+    getHistoricalAuctions(queryParams: GetHistoricalAuctions): Promise<object>;
     getHistoricalBars(queryParams: GetHistoricalBars): Promise<object>;
     getLatestBars(queryParams: GetLatestBars): Promise<object>;
     getConditionCodes(queryParams: GetConditionCodes): Promise<object>;
