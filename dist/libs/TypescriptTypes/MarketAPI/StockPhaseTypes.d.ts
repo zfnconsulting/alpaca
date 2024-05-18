@@ -1,5 +1,5 @@
 export interface GetHistoricalAuctions {
-    symbol: string;
+    symbols: string;
     start?: string;
     end?: string;
     limit?: number;
@@ -10,7 +10,7 @@ export interface GetHistoricalAuctions {
     sort?: string;
 }
 export interface GetHistoricalBars {
-    symbol: string;
+    symbols: string;
     timeframe: string;
     start?: string;
     end?: string;
@@ -23,7 +23,7 @@ export interface GetHistoricalBars {
     sort?: string;
 }
 export interface GetLatestBars {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }
@@ -32,7 +32,7 @@ export interface GetConditionCodes {
     tape: string;
 }
 export interface GetHistoricalQuotes {
-    symbol: string;
+    symbols: string;
     start?: string;
     end?: string;
     limit?: number;
@@ -43,17 +43,17 @@ export interface GetHistoricalQuotes {
     sort?: string;
 }
 export interface GetLatestQuotes {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }
 export interface GetSnapshots {
-    symbol: string | string[];
+    symbols: string | string[];
     feed?: string;
     currency?: string;
 }
 export interface GetHistoricalTrades {
-    symbol: string;
+    symbols: string;
     start?: string;
     end?: string;
     limit?: number;
@@ -64,12 +64,12 @@ export interface GetHistoricalTrades {
     sort?: string;
 }
 export interface GetLatestTrades {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }
 export interface GetHistoricalAuctionsSingleSymbol {
-    symbol: string;
+    symbols: string;
     start?: string;
     end?: string;
     limit?: number;
@@ -80,7 +80,7 @@ export interface GetHistoricalAuctionsSingleSymbol {
     sort?: string;
 }
 export interface GetHistoricalBarsSingleSymbol {
-    symbol: string;
+    symbols: string;
     timeframe: string;
     start?: string;
     end?: string;
@@ -93,12 +93,12 @@ export interface GetHistoricalBarsSingleSymbol {
     sort?: string;
 }
 export interface GetLatestBarSingleSymbol {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }
 export interface GetHistoricalQuotesSingleSymbol {
-    symbol: string;
+    symbols: string;
     start?: string;
     end?: string;
     limit?: number;
@@ -109,17 +109,17 @@ export interface GetHistoricalQuotesSingleSymbol {
     sort?: string;
 }
 export interface GetLatestQuoteSingleSymbol {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }
 export interface GetSnapshotSingleSymbol {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }
 export interface GetHistoricalTradesSingleSymbol {
-    symbol: string;
+    symbols: string;
     start?: string;
     end?: string;
     limit?: number;
@@ -130,7 +130,7 @@ export interface GetHistoricalTradesSingleSymbol {
     sort?: string;
 }
 export interface GetLatestTradeSingleSymbol {
-    symbol: string;
+    symbols: string;
     feed?: string;
     currency?: string;
 }

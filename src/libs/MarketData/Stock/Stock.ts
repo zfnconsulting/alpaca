@@ -213,7 +213,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/auctions`,
+            url: `/stocks/${param.symbols}/auctions`,
             version: "v2",
             method: "get",
             params: param,
@@ -233,7 +233,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/bars`,
+            url: `/stocks/${param.symbols}/bars`,
             version: "v2",
             method: "get",
             params: param,
@@ -251,7 +251,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/bars/latest`,
+            url: `/stocks/${param.symbols}/bars/latest`,
             version: "v2",
             method: "get",
             params: param,
@@ -269,7 +269,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/quotes`,
+            url: `/stocks/${param.symbols}/quotes`,
             version: "v2",
             method: "get",
             params: param,
@@ -289,7 +289,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/quotes/latest`,
+            url: `/stocks/${param.symbols}/quotes/latest`,
             version: "v2",
             method: "get",
             params: param,
@@ -308,7 +308,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/snapshot`,
+            url: `/stocks/${param.symbols}/snapshot`,
             version: "v2",
             method: "get",
             params: param,
@@ -327,7 +327,7 @@ class Stock extends AlpacaConfig {
     try {
       return axios.request(
         this.httpConfig.httpRequestConfig({
-          url: `stocks/${param.symbol}/trades`,
+          url: `stocks/${param.symbols}/trades`,
           version: "v2",
           method: "GET",
           params: param,
@@ -345,7 +345,7 @@ class Stock extends AlpacaConfig {
       return axios
         .request(
           this.httpConfig.httpRequestConfig({
-            url: `/stocks/${param.symbol}/trades/latest`,
+            url: `/stocks/${param.symbols}/trades/latest`,
             version: "v2",
             method: "get",
             params: param,
