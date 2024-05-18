@@ -10,3 +10,6 @@ dist/.DS_Store
 dist/libs/.DS_Store
 src/.DS_Store
 src/libs/.DS_Store
+.DS_Store
+dist/.DS_Store
+dist/libs/.DS_Store
