@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getHistoricalAuctionsInput = exports.getWatchlistbyID_input = exports.queryParams = exports.getWatchlistbyNameInput = exports.addAssettoWatchlistInput = exports.updateWatchlistById_input = exports.createWatchlist_input = exports.deleteOrderbyID_input = exports.replaceOrderbyID_input = exports.getOrderById_input = exports.deleteAllOrders_input = exports.getAllOrders_input = exports.createAnOrder_input = exports.getSpecificAnnouncement_input = exports.getAnnouncements_input = exports.getOptionContractByIDorSymbol_input = exports.getOptionContracts_input = exports.getAssets_input = exports.getAnAssetByIDorSymbol_input = void 0;
+exports.getHistoricalBars = exports.getHistoricalAuctionsInput = exports.getWatchlistbyID_input = exports.queryParams = exports.getWatchlistbyNameInput = exports.addAssettoWatchlistInput = exports.updateWatchlistById_input = exports.createWatchlist_input = exports.deleteOrderbyID_input = exports.replaceOrderbyID_input = exports.getOrderById_input = exports.deleteAllOrders_input = exports.getAllOrders_input = exports.createAnOrder_input = exports.getSpecificAnnouncement_input = exports.getAnnouncements_input = exports.getOptionContractByIDorSymbol_input = exports.getOptionContracts_input = exports.getAssets_input = exports.getAnAssetByIDorSymbol_input = void 0;
 const date_fns_1 = require("date-fns");
 exports.getAnAssetByIDorSymbol_input = { symbol_or_asset_id: "AAPL" };
 exports.getAssets_input = null;
@@ -101,6 +101,17 @@ exports.getWatchlistbyID_input = {
 exports.getHistoricalAuctionsInput = {
     symbols: "AAPL",
     // timeframe: "1Min",
+    //   start: "2024-05-16T00:00:00Z",
+    //   end: "2024-05-17T00:00:00Z",
+    //   limit: 1000,
+    //   feed: "sip",
+    //   adjustment: "all",
+    // page_token: "",
+    //   sort: "asc",
+};
+exports.getHistoricalBars = {
+    symbols: "AAPL",
+    timeframe: "1Min",
     //   start: "2024-05-16T00:00:00Z",
     //   end: "2024-05-17T00:00:00Z",
     //   limit: 1000,

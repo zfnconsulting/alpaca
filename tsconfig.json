@@ -13,5 +13,22 @@
     "rootDir": "./src"
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "Shell"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "Shell",
+    "src/libs/MarketData/Stock/Stock.ts",
+    "src/libs/AlpacaTradingAPI/CorporateActions/CorporateActions.ts",
+    "src/libs/AlpacaTradingAPI/Watchlists/Watchlists.ts",
+    "src/libs/AlpacaTradingAPI/Positions/Positions.ts",
+    "src/libs/AlpacaTradingAPI/PortfolioHistory/PortfolioHistory.ts",
+    "src/libs/AlpacaTradingAPI/Order/Orders.ts",
+    "src/libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding.ts",
+    "src/libs/AlpacaTradingAPI/AccountConfiguration/AccountConfiguration.ts",
+    "src/libs/AlpacaTradingAPI/Clock/Clock.ts",
+    "src/libs/AlpacaTradingAPI/Calendar/Calendar.ts",
+    "src/libs/AlpacaTradingAPI/Assets/Assets.ts",
+    "src/libs/AlpacaConfig/HTTPDataConfig.ts",
+    "src/libs/AlpacaConfig/AlpacaDataConfig.ts"
+  ]
 }

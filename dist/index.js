@@ -3,18 +3,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// TradingAPI
 const Account_1 = __importDefault(require("./libs/AlpacaTradingAPI/Account/Account"));
-const Assets_1 = __importDefault(require("./libs/AlpacaTradingAPI/Assets/Assets"));
-const CorporateActions_1 = __importDefault(require("./libs/AlpacaTradingAPI/CorporateActions/CorporateActions"));
-const Orders_1 = __importDefault(require("./libs/AlpacaTradingAPI/Order/Orders"));
-const Positions_1 = __importDefault(require("./libs/AlpacaTradingAPI/Positions/Positions"));
-const PortfolioHistory_1 = __importDefault(require("./libs/AlpacaTradingAPI/PortfolioHistory/PortfolioHistory"));
-const Watchlists_1 = __importDefault(require("./libs/AlpacaTradingAPI/Watchlists/Watchlists"));
-const AccountConfiguration_1 = __importDefault(require("./libs/AlpacaTradingAPI/AccountConfiguration/AccountConfiguration"));
-const Clock_1 = __importDefault(require("./libs/AlpacaTradingAPI/Clock/Clock"));
-const Calendar_1 = __importDefault(require("./libs/AlpacaTradingAPI/Calendar/Calendar"));
-const CryptoFunding_1 = __importDefault(require("./libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding"));
-const Stock_1 = __importDefault(require("./libs/MarketData/Stock/Stock"));
+// import Assets from "./libs/AlpacaTradingAPI/Assets/Assets";
+// import CorporateActions from "./libs/AlpacaTradingAPI/CorporateActions/CorporateActions";
+// import Orders from "./libs/AlpacaTradingAPI/Order/Orders";
+// import Positions from "./libs/AlpacaTradingAPI/Positions/Positions";
+// import PortfolioHistory from "./libs/AlpacaTradingAPI/PortfolioHistory/PortfolioHistory";
+// import Watchlists from "./libs/AlpacaTradingAPI/Watchlists/Watchlists";
+// import AccountConfiguration from "./libs/AlpacaTradingAPI/AccountConfiguration/AccountConfiguration";
+// import Clock from "./libs/AlpacaTradingAPI/Clock/Clock";
+// import Calendar from "./libs/AlpacaTradingAPI/Calendar/Calendar";
+// import CryptoFunding from "./libs/AlpacaTradingAPI/CryptoFunding/CryptoFunding";
+// MarketData
+// import Stock from "./libs/MarketData/Stock/Stock";
 class Alpaca {
     auth;
     constructor(auth) {
@@ -23,184 +25,6 @@ class Alpaca {
     }
     getAccount() {
         return new Account_1.default(this.auth).getAccount();
-    }
-    getAssets(params) {
-        return new Assets_1.default(this.auth).getAssets(params);
-    }
-    getAnAssetByIDorSymbol(params) {
-        return new Assets_1.default(this.auth).getAnAssetByIDorSymbol(params);
-    }
-    getOptionContracts(param) {
-        return new Assets_1.default(this.auth).getOptionContracts(param);
-    }
-    getOptionContractByIDorSymbol(param) {
-        return new Assets_1.default(this.auth).getOptionContractByIDorSymbol(param);
-    }
-    getSpecificAnnouncement(id) {
-        return new CorporateActions_1.default(this.auth).getSpecificAnnouncement(id);
-    }
-    getAnnouncements(param) {
-        return new CorporateActions_1.default(this.auth).getAnnouncements(param);
-    }
-    createAnOrder(param) {
-        return new Orders_1.default(this.auth).createAnOrder(param);
-    }
-    getAllOrders(param) {
-        return new Orders_1.default(this.auth).getAllOrders(param);
-    }
-    deleteAllOrders() {
-        return new Orders_1.default(this.auth).deleteAllOrders();
-    }
-    getOrderById(param) {
-        return new Orders_1.default(this.auth).getOrderById(param);
-    }
-    replaceOrderbyID(param) {
-        return new Orders_1.default(this.auth).replaceOrderbyID(param);
-    }
-    deleteOrderbyID(param) {
-        return new Orders_1.default(this.auth).deleteOrderbyID(param);
-    }
-    getAllOpenPositions() {
-        return new Positions_1.default(this.auth).getAllOpenPositions();
-    }
-    closeAllPositions(param) {
-        return new Positions_1.default(this.auth).closeAllPositions(param);
-    }
-    getOpenPosition(param) {
-        return new Positions_1.default(this.auth).getOpenPosition(param);
-    }
-    closePosition(param) {
-        return new Positions_1.default(this.auth).closePosition(param);
-    }
-    exerciseOptionPosition(param) {
-        return new Positions_1.default(this.auth).exerciseOptionPosition(param);
-    }
-    getPortfolioHistory(param) {
-        return new PortfolioHistory_1.default(this.auth).getAccountPortfolioHistory(param);
-    }
-    getAllWatchlists() {
-        return new Watchlists_1.default(this.auth).getAllWatchlists();
-    }
-    createWatchlist(data) {
-        return new Watchlists_1.default(this.auth).createWatchlist(data);
-    }
-    getWatchlistbyID(id) {
-        return new Watchlists_1.default(this.auth).getWatchlistbyID(id);
-    }
-    updateWatchlistById(id) {
-        return new Watchlists_1.default(this.auth).updateWatchlistById(id);
-    }
-    addAssettoWatchlist(id) {
-        return new Watchlists_1.default(this.auth).addAssettoWatchlist(id);
-    }
-    deleteWatchlistById(id) {
-        return new Watchlists_1.default(this.auth).deleteWatchlistById(id);
-    }
-    getWatchlistbyName(name) {
-        return new Watchlists_1.default(this.auth).getWatchlistbyName(name);
-    }
-    updateWatchlistByName(name) {
-        return new Watchlists_1.default(this.auth).updateWatchlistByName(name);
-    }
-    addAssettoWatchlistByName(name) {
-        return new Watchlists_1.default(this.auth).addAssettoWatchlistByName(name);
-    }
-    deleteWatchlistByName(name) {
-        return new Watchlists_1.default(this.auth).deleteWatchlistByName(name);
-    }
-    deleteSymbolfromWatchlist(id) {
-        return new Watchlists_1.default(this.auth).deleteSymbolfromWatchlist(id);
-    }
-    getAccountConfigurations() {
-        return new AccountConfiguration_1.default(this.auth).getAccountConfigurations();
-    }
-    updateAccountConfigurations(data) {
-        return new AccountConfiguration_1.default(this.auth).updateAccountConfigurations(data);
-    }
-    getMarketCalendarinfo(param) {
-        return new Calendar_1.default(this.auth).getMarketCalendarinfo(param);
-    }
-    clockAndCalendar() {
-        return new Clock_1.default(this.auth).getMarketClockInfo();
-    }
-    // CryptoFunding
-    getRetrieveCryptoFundingWallets(param) {
-        return new CryptoFunding_1.default(this.auth).getRetrieveCryptoFundingWallets(param);
-    }
-    getRetrieveCryptoFundingTransfer() {
-        return new CryptoFunding_1.default(this.auth).getRetrieveCryptoFundingTransfer();
-    }
-    requestNewWithdrawal(data) {
-        return new CryptoFunding_1.default(this.auth).requestNewWithdrawal(data);
-    }
-    getRetrieveSingleCryptoFundingTransfer(queryParams) {
-        return new CryptoFunding_1.default(this.auth).getRetrieveSingleCryptoFundingTransfer(queryParams);
-    }
-    getArrayofWhitelistedAddresses(queryParams) {
-        return new CryptoFunding_1.default(this.auth).getArrayofWhitelistedAddresses(queryParams);
-    }
-    requestNewWhitelistedAddress(data) {
-        return new CryptoFunding_1.default(this.auth).requestNewWhitelistedAddress(data);
-    }
-    deleteWhitelistedAddress(data) {
-        return new CryptoFunding_1.default(this.auth).deleteWhitelistedAddress(data);
-    }
-    getEstimatedGasFee(queryParams) {
-        return new CryptoFunding_1.default(this.auth).getEstimatedGasFee(queryParams);
-    }
-    getHistoricalAuctions(queryParams) {
-        return new Stock_1.default(this.auth).getHistoricalAuctions(queryParams);
-    }
-    getHistoricalBars(queryParams) {
-        return new Stock_1.default(this.auth).getHistoricalBars(queryParams);
-    }
-    getLatestBars(queryParams) {
-        return new Stock_1.default(this.auth).getLatestBars(queryParams);
-    }
-    getConditionCodes(queryParams) {
-        return new Stock_1.default(this.auth).getConditionCodes(queryParams);
-    }
-    getExchangeCodes() {
-        return new Stock_1.default(this.auth).getExchangeCodes();
-    }
-    getHistoricalQuotes(param) {
-        return new Stock_1.default(this.auth).getHistoricalQuotes(param);
-    }
-    getLatestQuotes(param) {
-        return new Stock_1.default(this.auth).getLatestQuotes(param);
-    }
-    getSnapshots(param) {
-        return new Stock_1.default(this.auth).getSnapshots(param);
-    }
-    getHistoricalTrades(param) {
-        return new Stock_1.default(this.auth).getHistoricalTrades(param);
-    }
-    getLatestTrades(param) {
-        return new Stock_1.default(this.auth).getLatestTrades(param);
-    }
-    getHistoricalAuctionsSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getHistoricalAuctionsSingleSymbol(param);
-    }
-    getHistoricalBarsSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getHistoricalBarsSingleSymbol(param);
-    }
-    getLatestBarSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getLatestBarSingleSymbol(param);
-    }
-    getHistoricalQuotesSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getHistoricalQuotesSingleSymbol(param);
-    }
-    getLatestQuoteSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getLatestQuoteSingleSymbol(param);
-    }
-    getSnapshotSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getSnapshotSingleSymbol(param);
-    }
-    getHistoricalTradesSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getHistoricalTradesSingleSymbol(param);
-    }
-    getLatestTradeSingleSymbol(param) {
-        return new Stock_1.default(this.auth).getLatestTradeSingleSymbol(param);
     }
 }
 exports.default = Alpaca;

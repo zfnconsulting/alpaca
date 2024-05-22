@@ -3,6 +3,7 @@ type Authentication = {
   secretKey: string;
   paper: boolean;
 };
+// add AIP Section
 
 type symbol_or_asset_id = string;
 type GetAnAssetByIDorSymbol = {
